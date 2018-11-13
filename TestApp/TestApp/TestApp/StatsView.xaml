@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TestApp.StatsView">
+	<ScrollView>
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto"></RowDefinition>
+				<RowDefinition Height="Auto"></RowDefinition>
+				<RowDefinition Height="Auto"></RowDefinition>
+				<RowDefinition Height="Auto"></RowDefinition>
+				<RowDefinition Height="Auto"></RowDefinition>
+				<RowDefinition Height="Auto"></RowDefinition>
+				<RowDefinition Height="Auto"></RowDefinition>
+				<RowDefinition Height="Auto"></RowDefinition>
+				<RowDefinition Height="Auto"></RowDefinition>
+				<RowDefinition Height="Auto"></RowDefinition>
+				<RowDefinition Height="Auto"></RowDefinition>
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*"></ColumnDefinition>
+			</Grid.ColumnDefinitions>
+
+			<Label Text="Personal statistics" FontSize="36" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Row="0"></Label>
+			<Label Text="Horror Statistics" FontSize="22" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Row="1"></Label>
+
+			<Grid Grid.Row="2" HeightRequest="100">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="*"></RowDefinition>
+				</Grid.RowDefinitions>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="*"></ColumnDefinition>
+					<ColumnDefinition Width="*"></ColumnDefinition>
+				</Grid.ColumnDefinitions>
+
+				<Label Text="Books Read: " FontSize="14" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Row="0" Grid.Column="0"></Label>
+				<Label Text="Pages Read: " FontSize="14" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Row="0" Grid.Column="1"></Label>
+			</Grid>
+
+			<Label Text="Comedy Statistics" FontSize="22" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Row="3"></Label>
+
+			<Grid Grid.Row="4" HeightRequest="100">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="*"></RowDefinition>
+				</Grid.RowDefinitions>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="*"></ColumnDefinition>
+					<ColumnDefinition Width="*"></ColumnDefinition>
+				</Grid.ColumnDefinitions>
+
+				<Label Text="Books Read: " FontSize="14" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Row="0" Grid.Column="0"></Label>
+				<Label Text="Pages Read: " FontSize="14" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Row="0" Grid.Column="1"></Label>
+			</Grid>
+
+			<Label Text="Crime Statistics" FontSize="22" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Row="5"></Label>
+
+			<Grid Grid.Row="6" HeightRequest="100">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="*"></RowDefinition>
+				</Grid.RowDefinitions>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="*"></ColumnDefinition>
+					<ColumnDefinition Width="*"></ColumnDefinition>
+				</Grid.ColumnDefinitions>
+
+				<Label Text="Books Read: " FontSize="14" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Row="0" Grid.Column="0"></Label>
+				<Label Text="Pages Read: " FontSize="14" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Row="0" Grid.Column="1"></Label>
+			</Grid>
+
+			<Label Text="Documentary Statistics" FontSize="22" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Row="7"></Label>
+
+			<Grid Grid.Row="8" HeightRequest="100">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="*"></RowDefinition>
+				</Grid.RowDefinitions>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="*"></ColumnDefinition>
+					<ColumnDefinition Width="*"></ColumnDefinition>
+				</Grid.ColumnDefinitions>
+
+				<Label Text="Books Read: " FontSize="14" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Row="0" Grid.Column="0"></Label>
+				<Label Text="Pages Read: " FontSize="14" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Row="0" Grid.Column="1"></Label>
+			</Grid>
+
+			<Label Text="Overall Statistics" FontSize="22" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Row="9"></Label>
+
+			<Grid Grid.Row="10" HeightRequest="100">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="*"></RowDefinition>
+					<RowDefinition Height="*"></RowDefinition>
+				</Grid.RowDefinitions>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="*"></ColumnDefinition>
+					<ColumnDefinition Width="*"></ColumnDefinition>
+				</Grid.ColumnDefinitions>
+
+				<Label Text="Books Read: " FontSize="14" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Row="0" Grid.Column="0"></Label>
+				<Label Text="Pages Read: " FontSize="14" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Row="0" Grid.Column="1"></Label>
+				<Label Text="Average Pages: " FontSize="14" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Row="1" Grid.Column="0"></Label>
+				<Label Text="Biggest Book Read: " FontSize="14" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Row="1" Grid.Column="1"></Label>
+
+			</Grid>
+		</Grid>
+	</ScrollView>
+	
+</ContentPage>

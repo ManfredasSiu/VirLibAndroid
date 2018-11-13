@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TestApp.Register">
+    <ContentPage.Content>
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="AUTO"></RowDefinition>
+				<RowDefinition Height="*"></RowDefinition>
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*"></ColumnDefinition>
+			</Grid.ColumnDefinitions>
+			<Label Text="Register" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="24" Grid.Row="0"></Label> 
+			
+			<Grid Grid.Row="1" ColumnSpacing="20" RowSpacing="20">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="AUTO"></RowDefinition>
+					<RowDefinition Height="AUTO"></RowDefinition>
+					<RowDefinition Height="AUTO"></RowDefinition>
+					<RowDefinition Height="*"></RowDefinition>
+				</Grid.RowDefinitions>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="*"></ColumnDefinition>
+					<ColumnDefinition Width="*"></ColumnDefinition>
+				</Grid.ColumnDefinitions>
+
+				<Label Text="Name" FontSize="16" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Row="0" Grid.Column="0"></Label>
+				<Entry x:Name="Nam" Placeholder="John" Grid.Row="0" Grid.Column="1"/>
+
+				<Label Text="Password" FontSize="16" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Row="1" Grid.Column="0"></Label>
+				<Entry x:Name="Pass" Placeholder="Password" IsPassword="True" Grid.Row="1" Grid.Column="1"/>
+
+				<Label Text="Email" FontSize="16" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Row="2" Grid.Column="0"></Label>
+				<Entry x:Name="Email" Placeholder="myEmail@email.eml" Grid.Row="2" Grid.Column="1"/>
+
+				<Button Clicked="Cancel_button" Text="Cancel" VerticalOptions="End" HeightRequest="50" Margin="5" Grid.Row="3" BorderColor="Black" BorderWidth="3" CornerRadius="20" Grid.Column="0"></Button>
+				<Button Clicked="Done_button" Text="Done" VerticalOptions="End" HeightRequest="50" Margin="5" Grid.Row="3" BorderColor="Black" BorderWidth="3" CornerRadius="20" Grid.Column="1"></Button>
+			</Grid>
+		</Grid>
+
+	</ContentPage.Content>
+</ContentPage>

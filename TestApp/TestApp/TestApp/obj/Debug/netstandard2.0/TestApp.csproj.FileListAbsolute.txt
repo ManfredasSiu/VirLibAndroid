@@ -1,0 +1,16 @@
+C:\Users\manfr\Source\Repos\VirtualLibraryApp\TestApp\TestApp\TestApp\bin\Debug\netstandard2.0\TestApp.deps.json
+C:\Users\manfr\Source\Repos\VirtualLibraryApp\TestApp\TestApp\TestApp\bin\Debug\netstandard2.0\TestApp.dll
+C:\Users\manfr\Source\Repos\VirtualLibraryApp\TestApp\TestApp\TestApp\bin\Debug\netstandard2.0\TestApp.pdb
+C:\Users\manfr\Source\Repos\VirtualLibraryApp\TestApp\TestApp\TestApp\obj\Debug\netstandard2.0\TestApp.csprojAssemblyReference.cache
+C:\Users\manfr\Source\Repos\VirtualLibraryApp\TestApp\TestApp\TestApp\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\manfr\Source\Repos\VirtualLibraryApp\TestApp\TestApp\TestApp\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\Users\manfr\Source\Repos\VirtualLibraryApp\TestApp\TestApp\TestApp\obj\Debug\netstandard2.0\TestApp.csproj.CoreCompileInputs.cache
+C:\Users\manfr\Source\Repos\VirtualLibraryApp\TestApp\TestApp\TestApp\obj\Debug\netstandard2.0\TestApp.AssemblyInfoInputs.cache
+C:\Users\manfr\Source\Repos\VirtualLibraryApp\TestApp\TestApp\TestApp\obj\Debug\netstandard2.0\TestApp.AssemblyInfo.cs
+C:\Users\manfr\Source\Repos\VirtualLibraryApp\TestApp\TestApp\TestApp\obj\Debug\netstandard2.0\TestApp.dll
+C:\Users\manfr\Source\Repos\VirtualLibraryApp\TestApp\TestApp\TestApp\obj\Debug\netstandard2.0\TestApp.pdb
+C:\Users\manfr\Source\Repos\VirtualLibraryApp\TestApp\TestApp\TestApp\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\manfr\Source\Repos\VirtualLibraryApp\TestApp\TestApp\TestApp\obj\Debug\netstandard2.0\Register.xaml.g.cs
+C:\Users\manfr\source\repos\VirtualLibraryApp\TestApp\TestApp\TestApp\obj\Debug\netstandard2.0\View1.xaml.g.cs
+C:\Users\manfr\source\repos\VirtualLibraryApp\TestApp\TestApp\TestApp\obj\Debug\netstandard2.0\StatsView.xaml.g.cs
+C:\Users\manfr\source\repos\VirtualLibraryApp\TestApp\TestApp\TestApp\obj\Debug\netstandard2.0\MyBooksView.xaml.g.cs
