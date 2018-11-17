@@ -1,4 +1,6 @@
 ﻿using Plugin.Media;
+using Plugin.Permissions;
+using Plugin.Permissions.Abstractions;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -23,7 +25,7 @@ namespace TestApp
         public async System.Threading.Tasks.Task LoginAsync()
         {
             await CrossMedia.Current.Initialize();
-
+            var results = await CrossPermissions.Current.RequestPermissionsAsync(Permission.Storage);
             if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
             {
                 await App.Current.MainPage.DisplayAlert("No Camera", "No camera available.", "OK");
