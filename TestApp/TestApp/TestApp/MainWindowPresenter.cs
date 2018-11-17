@@ -26,7 +26,7 @@ namespace TestApp
 
         public void MBooksInit()
         {
-
+            Application.Current.MainPage.Navigation.PushAsync(new MyBooksView());
         }
 
         public void LibInit()

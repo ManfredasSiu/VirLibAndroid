@@ -888,11 +888,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\manfr\\source\\repos\\VirtualLibraryApp\\TestApp\\TestApp\\TestApp.Android\\TestApp.Android.csproj",
+      "projectUniqueName": "C:\\Users\\manfr\\OneDrive\\Documents\\GitHub\\VirLibAndroid\\TestApp\\TestApp\\TestApp.Android\\TestApp.Android.csproj",
       "projectName": "TestApp.Android",
-      "projectPath": "C:\\Users\\manfr\\source\\repos\\VirtualLibraryApp\\TestApp\\TestApp\\TestApp.Android\\TestApp.Android.csproj",
+      "projectPath": "C:\\Users\\manfr\\OneDrive\\Documents\\GitHub\\VirLibAndroid\\TestApp\\TestApp\\TestApp.Android\\TestApp.Android.csproj",
       "packagesPath": "C:\\Users\\manfr\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\manfr\\source\\repos\\VirtualLibraryApp\\TestApp\\TestApp\\TestApp.Android\\obj\\",
+      "outputPath": "C:\\Users\\manfr\\OneDrive\\Documents\\GitHub\\VirLibAndroid\\TestApp\\TestApp\\TestApp.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
@@ -909,8 +909,8 @@
       "frameworks": {
         "monoandroid81": {
           "projectReferences": {
-            "C:\\Users\\manfr\\source\\repos\\VirtualLibraryApp\\TestApp\\TestApp\\TestApp\\TestApp.csproj": {
-              "projectPath": "C:\\Users\\manfr\\source\\repos\\VirtualLibraryApp\\TestApp\\TestApp\\TestApp\\TestApp.csproj"
+            "C:\\Users\\manfr\\OneDrive\\Documents\\GitHub\\VirLibAndroid\\TestApp\\TestApp\\TestApp\\TestApp.csproj": {
+              "projectPath": "C:\\Users\\manfr\\OneDrive\\Documents\\GitHub\\VirLibAndroid\\TestApp\\TestApp\\TestApp\\TestApp.csproj"
             }
           }
         }

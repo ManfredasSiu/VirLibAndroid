@@ -416,11 +416,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\manfr\\Source\\Repos\\VirtualLibraryApp\\TestApp\\TestApp\\TestApp\\TestApp.csproj",
+      "projectUniqueName": "C:\\Users\\manfr\\OneDrive\\Documents\\GitHub\\VirLibAndroid\\TestApp\\TestApp\\TestApp\\TestApp.csproj",
       "projectName": "TestApp",
-      "projectPath": "C:\\Users\\manfr\\Source\\Repos\\VirtualLibraryApp\\TestApp\\TestApp\\TestApp\\TestApp.csproj",
+      "projectPath": "C:\\Users\\manfr\\OneDrive\\Documents\\GitHub\\VirLibAndroid\\TestApp\\TestApp\\TestApp\\TestApp.csproj",
       "packagesPath": "C:\\Users\\manfr\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\manfr\\Source\\Repos\\VirtualLibraryApp\\TestApp\\TestApp\\TestApp\\obj\\",
+      "outputPath": "C:\\Users\\manfr\\OneDrive\\Documents\\GitHub\\VirLibAndroid\\TestApp\\TestApp\\TestApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
