@@ -883,20 +883,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\manfr\\.nuget\\packages\\": {}
+    "C:\\Users\\manta\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\manfr\\source\\repos\\VirtualLibraryApp\\TestApp\\TestApp\\TestApp.Android\\TestApp.Android.csproj",
+      "projectUniqueName": "C:\\Users\\manta\\Documents\\GitHub\\VirLibAndroid\\TestApp\\TestApp\\TestApp.Android\\TestApp.Android.csproj",
       "projectName": "TestApp.Android",
-      "projectPath": "C:\\Users\\manfr\\source\\repos\\VirtualLibraryApp\\TestApp\\TestApp\\TestApp.Android\\TestApp.Android.csproj",
-      "packagesPath": "C:\\Users\\manfr\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\manfr\\source\\repos\\VirtualLibraryApp\\TestApp\\TestApp\\TestApp.Android\\obj\\",
+      "projectPath": "C:\\Users\\manta\\Documents\\GitHub\\VirLibAndroid\\TestApp\\TestApp\\TestApp.Android\\TestApp.Android.csproj",
+      "packagesPath": "C:\\Users\\manta\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\manta\\Documents\\GitHub\\VirLibAndroid\\TestApp\\TestApp\\TestApp.Android\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [
-        "C:\\Users\\manfr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\manta\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -909,8 +909,8 @@
       "frameworks": {
         "monoandroid81": {
           "projectReferences": {
-            "C:\\Users\\manfr\\source\\repos\\VirtualLibraryApp\\TestApp\\TestApp\\TestApp\\TestApp.csproj": {
-              "projectPath": "C:\\Users\\manfr\\source\\repos\\VirtualLibraryApp\\TestApp\\TestApp\\TestApp\\TestApp.csproj"
+            "C:\\Users\\manta\\Documents\\GitHub\\VirLibAndroid\\TestApp\\TestApp\\TestApp\\TestApp.csproj": {
+              "projectPath": "C:\\Users\\manta\\Documents\\GitHub\\VirLibAndroid\\TestApp\\TestApp\\TestApp\\TestApp.csproj"
             }
           }
         }
