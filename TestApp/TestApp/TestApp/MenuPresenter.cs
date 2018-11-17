@@ -23,6 +23,13 @@ namespace TestApp
         public async System.Threading.Tasks.Task LoginAsync()
         {
             await CrossMedia.Current.Initialize();
+
+            if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
+            {
+                await App.Current.MainPage.DisplayAlert("No Camera", "No camera available.", "OK");
+                return;
+            }
+
             var file = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
             {
                 Directory = "LoginFace",
