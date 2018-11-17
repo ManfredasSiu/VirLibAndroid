@@ -5,3 +5,16 @@ TestApp/TestApp/TestApp.Android/obj/Debug/MonoAndroid81/linksrc/TestApp.Android.
 TestApp/TestApp/TestApp.Android/obj/Debug/MonoAndroid81/linkdst/TestApp.Android.dll
 TestApp/TestApp/TestApp.Android/obj/Debug/MonoAndroid81/android/assets/TestApp.Android.dll
 TestApp/TestApp/TestApp.Android/bin/Debug/TestApp.Android.dll
+TestApp/TestApp/TestApp.Android/bin/Debug/TestApp.pdb
+TestApp/TestApp/TestApp.Android/bin/Debug/TestApp.dll.mdb
+TestApp/TestApp/TestApp.Android/bin/Debug/TestApp.dll
+TestApp/.vs/TestApp/v15/Server/sqlite3/storage.ide-wal
+TestApp/.vs/TestApp/v15/Server/sqlite3/storage.ide-shm
+TestApp/TestApp/TestApp.Android/bin/
+TestApp/TestApp/TestApp.Android/obj/
+TestApp/TestApp/TestApp.Android/bin/
+TestApp/.vs/TestApp/v15/Server/sqlite3/storage.ide-shm
+*.ide-wal
+
+TestApp/TestApp/TestApp/obj/
+TestApp/TestApp/TestApp/bin/
