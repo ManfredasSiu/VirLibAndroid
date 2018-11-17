@@ -18,3 +18,5 @@ TestApp/.vs/TestApp/v15/Server/sqlite3/storage.ide-shm
 
 TestApp/TestApp/TestApp/obj/
 TestApp/TestApp/TestApp/bin/
+TestApp/TestApp/TestApp/bin/
+TestApp/TestApp/TestApp/bin/Debug/netstandard2.0/TestApp.dll.mdb
