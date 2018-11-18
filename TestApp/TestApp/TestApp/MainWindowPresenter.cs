@@ -7,9 +7,9 @@ namespace TestApp
 {
     class MainWindowPresenter
     {
-        View1 MW;
+        MainWindow MW;
 
-        public MainWindowPresenter(View1 MW)
+        public MainWindowPresenter(MainWindow MW)
         {
             this.MW = MW;
         }
@@ -21,17 +21,18 @@ namespace TestApp
 
         public void RecInit()
         {
-
+            Application.Current.MainPage.Navigation.PushAsync(new Recommended());
         }
 
         public void MBooksInit()
         {
+            Application.Current.MainPage.Navigation.PushAsync(new MyBooksView());
 
         }
 
         public void LibInit()
         {
-
+            Application.Current.MainPage.Navigation.PushAsync(new LibraryView());
         }
     }
 }

@@ -6,11 +6,11 @@ using Xamarin.Forms;
 
 namespace TestApp
 {
-    class MenuPresenter
+    class MainPagePresenter
     {
         MainPage MP;
 
-        public MenuPresenter(MainPage MP)
+        public MainPagePresenter(MainPage MP)
         {
             this.MP = MP;
         }
@@ -30,7 +30,7 @@ namespace TestApp
             });
 
             //Face Recognition
-            Application.Current.MainPage = new NavigationPage(new View1());
+            Application.Current.MainPage = new NavigationPage(new MainWindow());
 
         }
         

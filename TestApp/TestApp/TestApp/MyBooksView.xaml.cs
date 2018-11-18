@@ -12,9 +12,16 @@ namespace TestApp
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class MyBooksView : ContentPage
 	{
-		public MyBooksView ()
-		{
-			InitializeComponent ();
-		}
-	}
+        MyBooksViewPresenter MBVP;
+        public MyBooksView()
+        {
+            InitializeComponent();
+            MBVP = new MyBooksViewPresenter(this);
+        }
+
+        private void ReturnBook_Button(object sender, EventArgs e)
+        {
+            MBVP.ReturnInit();
+        }
+    }
 }
