@@ -19,7 +19,7 @@ namespace VirtualLibrary
         public FaceApiCalls()
         {
             //CreateGroup();
-            faceServiceClient = new FaceServiceClient("782b7ef7c9ac484f8598b446283ea5cd", "https://northeurope.api.cognitive.microsoft.com/face/v1.0");
+            faceServiceClient = new FaceServiceClient("", "https://northeurope.api.cognitive.microsoft.com/face/v1.0");
         }
 
         private async void CreateGroup()
