@@ -2,14 +2,17 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.RegularExpressions;
+
 using Xamarin.Forms;
+
 
 namespace TestApp
 {
     class RegisterPresenter
     {
         Register R;
-        public event EventHandler<WrongIputEventArgs> WrongInput;
+        public event EventHandler<WrongInputEventArgs> WrongInput;
 
         public RegisterPresenter(Register R)
         {
@@ -20,7 +23,7 @@ namespace TestApp
         {
             if (CheckTheEntries(R.name, R.password, R.email) != 0)
             {
-                OnWrongInput(new WrongIputEventArgs { ErrorCode = CheckTheEntries(R.name, R.password, R.email) });
+                OnWrongInput(new WrongInputEventArgs { ErrorCode = CheckTheEntries(R.name, R.password, R.email) });
             }
 
             await CrossMedia.Current.Initialize();
@@ -38,8 +41,9 @@ namespace TestApp
 
         public int CheckTheEntries(String name, String password, String email) //Security blokai Entry atzvilgiu
         {
-            var noSpecials = new System.Text.RegularExpressions.Regex("^[a-zA-Z0-9]*$");
+            var noSpecials = new System.Text.RegularExpressions.Regex("^[a-zA-Z0-9]{2 ,}$"); // {2 ,} Matches the previous element at least 2 times.
             var correctEmail = new System.Text.RegularExpressions.Regex("^[_a-z0-9-]+(.[a-z0-9-]+)@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$"); //Pasiai6kinti dar regex
+            var correctPassword = new System.Text.RegularExpressions.Regex("^([a-z]+[A-Z]+[0-9]+){6 ,}$");
             if (name.Replace(" ", "") == "")
             {
                 return 1;
@@ -56,29 +60,26 @@ namespace TestApp
             {
                 return 4;
             }
-            else if (!correctEmail.IsMatch(email))
+            else if (!correctPassword.IsMatch(password))
             {
-                //rase event
                 return 5;
             }
-            /* 
-            //Patikrina ar nėra jau tokio userio + emailo
-            else if (DB.SearchUser(name) == 2)
+            else if (!correctEmail.IsMatch(email))
             {
                 return 6;
+            }
+            /*
+            else if (DB.SearchUser(name) == 2)
+            {
+                return 7;
             }
             */
             return 0;
         }
 
-
-        protected virtual void OnWrongInput(WrongIputEventArgs e)
+        protected virtual void OnWrongInput(WrongInputEventArgs e)
         {
-            EventHandler<WrongIputEventArgs> handler = WrongInput;
-            if (handler != null)
-            {
-                handler(this, e);
-            }
+            WrongInput?.Invoke(this, e); //Iššaukiamas eventas, jei subscriberių != null
         }
     }
 }
