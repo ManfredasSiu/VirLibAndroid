@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Plugin.Media;
+using Plugin.Permissions;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,13 +12,13 @@ namespace TestApp
         public App()
         {
             InitializeComponent();
-
+            
             MainPage = new NavigationPage(new MainPage());
         }
 
         protected override void OnStart()
         {
-            // Handle when your app starts
+            CrossMedia.Current.Initialize();
         }
 
         protected override void OnSleep()

@@ -25,18 +25,37 @@ namespace TestApp
         public async System.Threading.Tasks.Task LoginAsync()
         {
             await CrossMedia.Current.Initialize();
-            var results = await CrossPermissions.Current.RequestPermissionsAsync(Permission.Storage);
+            await App.Current.MainPage.DisplayAlert("Permissions", "" + await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.Storage), "OK");
+            if (await CrossPermissions.Current.ShouldShowRequestPermissionRationaleAsync(Permission.Storage))
+                await App.Current.MainPage.DisplayAlert("Permissions", "Storage Permission Needed", "OK");
+            var storageStatus = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.Storage);
+
+            // var results = await CrossPermissions.Current.RequestPermissionsAsync(Permission.Storage);
             if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
             {
                 await App.Current.MainPage.DisplayAlert("No Camera", "No camera available.", "OK");
                 return;
             }
-
-            var file = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
+            if (storageStatus != PermissionStatus.Granted)
             {
-                Directory = "LoginFace",
-                Name = "Face"
-            });
+                var results = await CrossPermissions.Current.RequestPermissionsAsync( Permission.Storage );
+                if (results.ContainsKey(Permission.Storage))
+                    storageStatus = results[Permission.Storage];
+            }
+            if (storageStatus == PermissionStatus.Granted)
+            {
+                var file = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
+                {
+                    Directory = "LoginFace",
+                    Name = "Face"
+                });
+            }
+            else
+            {
+                await App.Current.MainPage.DisplayAlert("Permissions Denied", "Unable to open camera", "OK");
+                return;
+            }
+
 
             //Face Recognition
             Application.Current.MainPage = new NavigationPage(new View1());
