@@ -12,6 +12,9 @@ namespace TestApp
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class Register : ContentPage
 	{
+        public string name => Nam.Text;
+        public string password => Pass.Text;
+        public string email => Email.Text;
         RegisterPresenter RP;
 		public Register ()
 		{
@@ -21,7 +24,7 @@ namespace TestApp
 
         public void Done_button(Object sender, EventArgs e)
         {
-            RP.CreateUser(name: Nam.ToString(), password: Pass.ToString(), email:Email.ToString());
+            RP.CreateUser();
         }
 
         public async void Cancel_button(Object sender, EventArgs e)
