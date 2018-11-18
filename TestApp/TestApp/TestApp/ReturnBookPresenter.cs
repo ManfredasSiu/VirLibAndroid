@@ -6,13 +6,24 @@ using Xamarin.Forms;
 
 namespace TestApp
 {
-    class AddBookPresenter
+    class ReturnBookPresenter
     {
-        AddBook AB;
+        ReturnBook RB;
 
-        public AddBookPresenter(AddBook AB)
+        public ReturnBookPresenter(ReturnBook RB)
         {
-            this.AB = AB;
+            this.RB = RB;
+        }
+
+
+        public void Ret_Init()
+        {
+            //some code to change cuurentuserbooks and etc.
+        }
+
+        public void InitCancel()
+        {
+            Application.Current.MainPage = new NavigationPage(new MyBooksView());
         }
 
         public async System.Threading.Tasks.Task ScanAsync()
@@ -25,13 +36,8 @@ namespace TestApp
             });
 
             //Barcode scanner
-            Application.Current.MainPage = new NavigationPage(new MyBooksView());
+            //Application.Current.ReturnBook = new NavigationPage(new MyBooksView());
 
-        }
-
-        public void InitCancel()
-        {
-            Application.Current.MainPage = new NavigationPage(new LibraryView());
         }
     }
 }

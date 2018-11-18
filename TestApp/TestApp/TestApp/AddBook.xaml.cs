@@ -23,12 +23,12 @@ namespace TestApp
 
         private void ScanBarcode_Button(object sender, EventArgs e)
         {
-            ABP.ScanInit();
+            ABP.ScanAsync();
         }
 
         private void Cancel_Button(object sender, EventArgs e)
         {
-            //ABP.ScanInit();
+            ABP.InitCancel();
         }
     }
 }

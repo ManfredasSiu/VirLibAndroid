@@ -8,6 +8,7 @@
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="AUTO"></RowDefinition>
             <RowDefinition Height="AUTO"></RowDefinition>
+            <RowDefinition Height="AUTO"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -17,6 +18,7 @@
         </Grid.ColumnDefinitions>
         <Label Text="My books" FontSize="20" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Row="0" Grid.Column="1"></Label>
         <Button Clicked="ReturnBook_Button" Text="Return Book" Grid.Row="1" Grid.Column="1" BorderColor="Black" BorderWidth="3" CornerRadius="20" TextColor="Black" BackgroundColor="LightGray"></Button>
+        <Button Clicked="Cancel_Button" Text="Cancel" Grid.Row="2" Grid.Column="1" BorderColor="Black" BorderWidth="3" CornerRadius="20" TextColor="Black" BackgroundColor="LightGray"></Button>
 
     </Grid>
 

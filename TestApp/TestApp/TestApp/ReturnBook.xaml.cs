@@ -3,30 +3,38 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace TestApp
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class MyBooksView : ContentPage
+	public partial class ReturnBook : ContentPage
 	{
-        MyBooksViewPresenter MBVP;
-        public MyBooksView()
+
+	
+        ReturnBookPresenter RBP;
+
+        public ReturnBook()
         {
             InitializeComponent();
-            MBVP = new MyBooksViewPresenter(this);
+            RBP = new ReturnBookPresenter(this);
         }
 
-        private void ReturnBook_Button(object sender, EventArgs e)
+        private void ScanBarcode_Button(object sender, EventArgs e)
         {
-            MBVP.ReturnInit();
+            RBP.ScanAsync();
+        }
+
+        private void Ret_Button(object sender, EventArgs e)
+        {
+            RBP.Ret_Init();
         }
 
         private void Cancel_Button(object sender, EventArgs e)
         {
-            MBVP.InitCancel();
+            RBP.InitCancel();
         }
+
     }
 }
