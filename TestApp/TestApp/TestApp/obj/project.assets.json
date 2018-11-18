@@ -413,23 +413,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\manta\\.nuget\\packages\\": {},
+    "C:\\Users\\manfr\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\manta\\Documents\\GitHub\\VirLibAndroid\\TestApp\\TestApp\\TestApp\\TestApp.csproj",
+      "projectUniqueName": "C:\\Users\\manfr\\OneDrive\\Documents\\GitHub\\VirLibAndroid\\TestApp\\TestApp\\TestApp\\TestApp.csproj",
       "projectName": "TestApp",
-      "projectPath": "C:\\Users\\manta\\Documents\\GitHub\\VirLibAndroid\\TestApp\\TestApp\\TestApp\\TestApp.csproj",
-      "packagesPath": "C:\\Users\\manta\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\manta\\Documents\\GitHub\\VirLibAndroid\\TestApp\\TestApp\\TestApp\\obj\\",
+      "projectPath": "C:\\Users\\manfr\\OneDrive\\Documents\\GitHub\\VirLibAndroid\\TestApp\\TestApp\\TestApp\\TestApp.csproj",
+      "packagesPath": "C:\\Users\\manfr\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\manfr\\OneDrive\\Documents\\GitHub\\VirLibAndroid\\TestApp\\TestApp\\TestApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\manta\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\manfr\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
