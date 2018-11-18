@@ -4,6 +4,7 @@ using Plugin.Permissions.Abstractions;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using VirtualLibrary;
 using Xamarin.Forms;
 
 namespace TestApp
@@ -25,7 +26,6 @@ namespace TestApp
         public async System.Threading.Tasks.Task LoginAsync()
         {
             await CrossMedia.Current.Initialize();
-            await App.Current.MainPage.DisplayAlert("Permissions", "" + await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.Storage), "OK");
             if (await CrossPermissions.Current.ShouldShowRequestPermissionRationaleAsync(Permission.Storage))
                 await App.Current.MainPage.DisplayAlert("Permissions", "Storage Permission Needed", "OK");
             var storageStatus = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.Storage);
@@ -49,17 +49,27 @@ namespace TestApp
                     Directory = "LoginFace",
                     Name = "Face"
                 });
+                if(file != null)
+                {
+                    ICallAzureAPI CAA = new FaceApiCalls();
+                    try
+                    {
+                        var username = await CAA.RecognitionAsync(file.Path);
+
+                        await App.Current.MainPage.DisplayAlert("User Connected", "" + username, "OK");
+                        Application.Current.MainPage = new NavigationPage(new View1());
+                    }
+                    catch(Exception e)
+                    {
+                        await App.Current.MainPage.DisplayAlert("Exception", "" + e.Message, "OK");
+                    }
+                }
             }
             else
             {
                 await App.Current.MainPage.DisplayAlert("Permissions Denied", "Unable to open camera", "OK");
                 return;
             }
-
-
-            //Face Recognition
-            Application.Current.MainPage = new NavigationPage(new View1());
-
         }
         
     }
