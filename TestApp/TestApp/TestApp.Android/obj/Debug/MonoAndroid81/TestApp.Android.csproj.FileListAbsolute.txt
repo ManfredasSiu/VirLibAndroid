@@ -1,2 +1,0 @@
-C:\Users\manfr\OneDrive\Documents\GitHub\VirLibAndroid\TestApp\TestApp\TestApp.Android\obj\Debug\MonoAndroid81\TestApp.Android.csprojAssemblyReference.cache
-C:\Users\manfr\OneDrive\Documents\GitHub\VirLibAndroid\TestApp\TestApp\TestApp.Android\obj\Debug\MonoAndroid81\res.flag
