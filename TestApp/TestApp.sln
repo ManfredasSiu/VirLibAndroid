@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestApp.Android", "TestApp\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestApp", "TestApp\TestApp\TestApp.csproj", "{5CC25E0F-5ACB-460E-AB81-FD2A2C7BE117}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{427A6FEA-98C2-4403-BDFC-084DBF0257C3}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,10 +25,6 @@ Global
 		{5CC25E0F-5ACB-460E-AB81-FD2A2C7BE117}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5CC25E0F-5ACB-460E-AB81-FD2A2C7BE117}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5CC25E0F-5ACB-460E-AB81-FD2A2C7BE117}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{427A6FEA-98C2-4403-BDFC-084DBF0257C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{427A6FEA-98C2-4403-BDFC-084DBF0257C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{427A6FEA-98C2-4403-BDFC-084DBF0257C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{427A6FEA-98C2-4403-BDFC-084DBF0257C3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
