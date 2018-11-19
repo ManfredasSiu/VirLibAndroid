@@ -21,9 +21,9 @@ namespace TestApp
             //some code to change cuurentuserbooks and etc.
         }
 
-        public void InitCancel()
+        public async void InitCancel()
         {
-            Application.Current.MainPage = new NavigationPage(new MyBooksView());
+            await Application.Current.MainPage.Navigation.PopAsync();
         }
 
         public async System.Threading.Tasks.Task ScanAsync()

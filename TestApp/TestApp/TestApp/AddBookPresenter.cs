@@ -29,9 +29,9 @@ namespace TestApp
 
         }
 
-        public void InitCancel()
+        public async void InitCancel()
         {
-            Application.Current.MainPage = new NavigationPage(new LibraryView());
+            await Application.Current.MainPage.Navigation.PopAsync();
         }
     }
 }

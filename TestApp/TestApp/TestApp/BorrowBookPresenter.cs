@@ -20,9 +20,9 @@ namespace TestApp
             //some code to change cuurentuserbooks and etc.
         }
 
-        public void InitCancel()
+        public async void InitCancel()
         {
-            Application.Current.MainPage = new NavigationPage(new LibraryView());
+            await Application.Current.MainPage.Navigation.PopAsync();
         }
 
         public async System.Threading.Tasks.Task ScanAsync()
@@ -30,12 +30,9 @@ namespace TestApp
             await CrossMedia.Current.Initialize();
             var file = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
             {
-                //Directory = "LoginFace",
-                //Name = "Face"
             });
 
             //Barcode scanner
-            Application.Current.MainPage = new NavigationPage(new LibraryView());
 
         }
     }
