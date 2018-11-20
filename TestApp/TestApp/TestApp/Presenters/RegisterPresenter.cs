@@ -46,20 +46,19 @@ namespace TestApp
                 });
                 if (file != null)
                 {
-                    ICallAzureAPI CAA = new FaceApiCalls();
+                    ICallAzureAPI CAA = RefClass.Instance.CAA;
                     var checkIfNologin = await CAA.RecognitionAsync(file.Path);
                     if (checkIfNologin == null)
                     {
                         try
                         {
-
-                            RestClient WebSC = new RestClient();
                             var username = await CAA.FaceSave(name, file.Path);
                             try
                             {
+                                var WebSC = RefClass.Instance.RC;
                                 await WebSC.AddUserAsync(R.nameTxt, R.PassTxt, R.EmailTxt);
                                 await App.Current.MainPage.DisplayAlert("User Registered", "" + username, "OK");
-                                Application.Current.MainPage = new NavigationPage(new MainWindow());
+                                await Application.Current.MainPage.Navigation.PopAsync();
                             }
                             catch
                             {

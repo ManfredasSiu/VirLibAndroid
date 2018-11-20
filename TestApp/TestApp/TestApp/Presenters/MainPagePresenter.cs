@@ -22,7 +22,7 @@ namespace TestApp
 
         public void Register()
         {
-            Application.Current.MainPage.Navigation.PushAsync(new Register());
+           RefClass.Instance.InitRegister();
         }
 
         public async System.Threading.Tasks.Task LoginAsync()
@@ -53,15 +53,26 @@ namespace TestApp
                 });
                 if (file != null)
                 {
-                    ICallAzureAPI CAA = new FaceApiCalls();
+                    ICallAzureAPI CAA = RefClass.Instance.CAA;
                     try
                     {
                         var username = await CAA.RecognitionAsync(file.Path);
-                        RestClient WebSC = new RestClient();
                         try
                         {
+                            var WebSC = RefClass.Instance.RC;
                             var user = await WebSC.GetUserAsync(username);
-                            Application.Current.MainPage = new NavigationPage(new MainWindow());
+                            var UserBook = await WebSC.GetBooksReadAsync(user.UserID);
+                            var BooksRea = await WebSC.GetUserBooksAsync(user.UserID);
+                            RefClass.Instance.GB.CurrentUser = new UserData()
+                            {
+                                UserID = user.UserID,
+                                UserEmail = user.UserEmail,
+                                UserName = user.UserName,
+                                UserStatus = user.UserStatus,
+                                UserBooks = UserBook,
+                                BooksRead = BooksRea
+                            };
+                            RefClass.Instance.InitMain();
                         }
                         catch
                         {

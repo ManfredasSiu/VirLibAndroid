@@ -68,9 +68,9 @@ namespace TestApp
             return JsonConvert.DeserializeObject<int>(content);
         }
 
-        public async Task<int> BorrowBookAsync(User user, Book borrowThis )
+        public async Task<int> BorrowBookAsync(int UserID, Book borrowThis )
         {
-            var uri = new Uri("https://webservicevirlib.azurewebsites.net/api/book/borrow/" + user.UserID + "/" + borrowThis.BookID);
+            var uri = new Uri("https://webservicevirlib.azurewebsites.net/api/book/borrow/" + UserID + "/" + borrowThis.BookID);
             var response = await HttpClient.GetAsync(uri);
             if (!response.IsSuccessStatusCode)
             {
@@ -80,9 +80,9 @@ namespace TestApp
             return JsonConvert.DeserializeObject<int>(content);
         }
 
-        public async Task<int> ReturnBookAsync(User user, Book borrowThis)
+        public async Task<int> ReturnBookAsync(int UserID, Book borrowThis)
         {
-            var uri = new Uri("https://webservicevirlib.azurewebsites.net/api/book/return/" + user.UserID + "/" + borrowThis.BookID);
+            var uri = new Uri("https://webservicevirlib.azurewebsites.net/api/book/return/" + UserID + "/" + borrowThis.BookID);
             var response = await HttpClient.GetAsync(uri);
             if (!response.IsSuccessStatusCode)
             {
@@ -92,9 +92,9 @@ namespace TestApp
             return JsonConvert.DeserializeObject<int>(content);
         }
 
-        public async Task<List<Book>> GetUserBooksAsync(User user)
+        public async Task<List<Book>> GetUserBooksAsync(int UserID)
         {
-            var uri = new Uri("https://webservicevirlib.azurewebsites.net/api/book/getub/"+user.UserID);
+            var uri = new Uri("https://webservicevirlib.azurewebsites.net/api/book/getub/"+UserID);
             var response = await HttpClient.GetAsync(uri);
             if (!response.IsSuccessStatusCode)
             {
@@ -104,9 +104,9 @@ namespace TestApp
             return JsonConvert.DeserializeObject<List<Book>>(content);
         }
 
-        public async Task<List<Book>> GetBooksReadAsync(User user)
+        public async Task<List<Book>> GetBooksReadAsync(int UserID)
         {
-            var uri = new Uri("https://webservicevirlib.azurewebsites.net/api/book/getbr/" + user.UserID);
+            var uri = new Uri("https://webservicevirlib.azurewebsites.net/api/book/getbr/" + UserID);
             var response = await HttpClient.GetAsync(uri);
             if (!response.IsSuccessStatusCode)
             {
