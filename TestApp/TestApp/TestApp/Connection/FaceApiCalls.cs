@@ -36,7 +36,7 @@ namespace VirtualLibrary
                 await faceServiceClient.TrainPersonGroupAsync(_groupId); //Grupe istreniruojama su nauju veidu
                 return true;
             }
-            catch(Exception e)
+            catch
             {
                 await faceServiceClient.DeletePersonAsync(_groupId, person.PersonId); //Jei treniravimas nepavyko - istrinti zmogu is grupes
                 return false;
