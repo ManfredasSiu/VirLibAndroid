@@ -8,8 +8,8 @@ namespace TestApp
 {
     class RegisterPresenter
     {
-        Register R;
-        public RegisterPresenter(Register R)
+        IRegisterView R;
+        public RegisterPresenter(IRegisterView R)
         {
             this.R = R;
         }

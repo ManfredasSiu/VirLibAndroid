@@ -10,11 +10,23 @@ using Xamarin.Forms.Xaml;
 namespace TestApp
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class MyBooksView : ContentPage
+	public partial class MyBooksView : ContentPage, IMyBooksView
 	{
-		public MyBooksView ()
-		{
-			InitializeComponent ();
-		}
-	}
+        MyBooksViewPresenter MBVP;
+        public MyBooksView()
+        {
+            InitializeComponent();
+            MBVP = new MyBooksViewPresenter(this);
+        }
+
+        private void ReturnBook_Button(object sender, EventArgs e)
+        {
+            MBVP.ReturnInit();
+        }
+
+        private void Cancel_Button(object sender, EventArgs e)
+        {
+            MBVP.InitCancel();
+        }
+    }
 }
