@@ -19,33 +19,13 @@
                         <RowDefinition Height="*"></RowDefinition>
                     </Grid.RowDefinitions>
 
+                    <TableView  Grid.Row="1" x:Name="YourBooks">
 
-
-                    <Label Text="Book Title" WidthRequest="50" HorizontalTextAlignment="Start" Grid.Row="0"></Label>
-                    <Label Text="Barcode" WidthRequest="50" HorizontalTextAlignment="Center" Grid.Row="0"></Label>
-                    <Label Text="Genre" WidthRequest="50" HorizontalTextAlignment="End" Grid.Row="0"></Label>
-
-                    <TableView  Grid.Row="1">
-                        <TableRoot>
-                            <TableSection>
-                                <ViewCell>
-                                    <StackLayout  Orientation="Horizontal">
-                                        <Label Text="Harry Potter" WidthRequest="140" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
-                                        <Label Text="000021" WidthRequest="140" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
-                                        <Label Text="Fantasy" WidthRequest="140"  HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
-                                    </StackLayout>
-                                </ViewCell>
-                                <ViewCell>
-                                    <StackLayout  Orientation="Horizontal">
-                                        <Label Text="Animal farm" WidthRequest="140" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
-                                        <Label Text="000022" WidthRequest="140" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
-                                        <Label Text="Fantasy" WidthRequest="140"  HorizontalTextAlignment="Center" VerticalTextAlignment="Center"></Label>
-                                    </StackLayout>
-                                </ViewCell>
-                            </TableSection>
+                        <TableRoot >
+                           
 
                         </TableRoot>
-                        
+
                     </TableView>
                 </Grid>
         </ScrollView>
