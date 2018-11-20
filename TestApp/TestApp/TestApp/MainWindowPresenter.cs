@@ -7,15 +7,9 @@ namespace TestApp
 {
     class MainWindowPresenter
     {
-<<<<<<< HEAD
         View1 MW;
 
         public MainWindowPresenter(View1 MW)
-=======
-        MainWindow MW;
-
-        public MainWindowPresenter(MainWindow MW)
->>>>>>> parent of 8e06e99... Prideti TableViews ir inerfeisai presenteriams
         {
             this.MW = MW;
         }

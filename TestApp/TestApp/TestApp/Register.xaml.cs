@@ -12,12 +12,7 @@ namespace TestApp
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class Register : ContentPage
 	{
-<<<<<<< HEAD
 
-=======
-        public string nameField { get => "test" ; }
-        
->>>>>>> parent of 8e06e99... Prideti TableViews ir inerfeisai presenteriams
         RegisterPresenter RP;
 		public Register ()
 		{
