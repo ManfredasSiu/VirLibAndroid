@@ -55,7 +55,6 @@ namespace TestApp
                 });
                 if (file != null)
                 {
-                    
                     ICallAzureAPI CAA = RefClass.Instance.CAA;
                     try
                     {
@@ -66,35 +65,37 @@ namespace TestApp
                             
                             var WebSC = RefClass.Instance.RC;
                             var user = await WebSC.GetUserAsync(username);
-                            var UserBook = await WebSC.GetBooksReadAsync(user.UserID);
-                            var BooksRea = await WebSC.GetUserBooksAsync(user.UserID);
-                            RefClass.Instance.GB.CurrentUser = new UserData()
+                            if (user != null)
                             {
-                                UserID = user.UserID,
-                                UserEmail = user.UserEmail,
-                                UserName = user.UserName,
-                                UserStatus = user.UserStatus,
-                                UserBooks = UserBook,
-                                BooksRead = BooksRea
-                            };
-                            RefClass.Instance.InitMain();
-                            
+
+
+                                var UserBook = await WebSC.GetBooksReadAsync(user.UserID);
+                                var BooksRea = await WebSC.GetUserBooksAsync(user.UserID);
+                                RefClass.Instance.GB.CurrentUser = new UserData()
+                                {
+                                    UserID = user.UserID,
+                                    UserEmail = user.UserEmail,
+                                    UserName = user.UserName,
+                                    UserStatus = user.UserStatus,
+                                    UserBooks = UserBook,
+                                    BooksRead = BooksRea
+                                };
+                                RefClass.Instance.InitMain();
+                            }
+                            else
+                                await App.Current.MainPage.DisplayAlert("Exception", "Oops! We didn't find your face in our database. Try again", "OK");
                         }
                         catch
                         {
-
-                            UserDialogs.Instance.HideLoading();
                             throw;
                         }
-                        UserDialogs.Instance.HideLoading();
                     }
                     catch (Exception e)
                     {
-                        UserDialogs.Instance.HideLoading();
-                        await App.Current.MainPage.DisplayAlert("Exception", "error: " + e.Message, "OK");
+                        await App.Current.MainPage.DisplayAlert("Exception", "Oops! We didn't find your face in our database. Try again", "OK");
                     }
                     File.Delete(file.Path);
-                    
+                    UserDialogs.Instance.HideLoading();
                 }
             }
             else
