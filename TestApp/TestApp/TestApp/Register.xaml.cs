@@ -26,7 +26,7 @@ namespace TestApp
 
         public void Done_button(Object sender, EventArgs e)
         {
-            RP.CreateUser();
+            RP.CreateUserAsync();
         }
 
         public async void Cancel_button(Object sender, EventArgs e)
@@ -52,7 +52,7 @@ namespace TestApp
                     message = "User name is incorrect";
                     break;
                 case 5:
-                    message = "Password is incorrect"; //Turi būti panaudotos mažosios ir didžiosios raidės bei skaičiai ir ilgis >=6 
+                    message = "Password is incorrect"; //Slaptažodis turi būti panaudotos mažosios ir didžiosios raidės bei skaičiai ir ilgis >=6 
                     break;
                 case 6:
                     message = "Email is incorrect";
@@ -60,9 +60,9 @@ namespace TestApp
                 case 7:
                     message = "This user name already exists";
                     break;
-
-               await DisplayAlert("Warrning", message, "OK");
             }
+
+            await DisplayAlert("Warrning", message, "OK");
         }
     }
 }

@@ -19,11 +19,12 @@ namespace TestApp
             this.R = R;
         }
 
-        public async void CreateUser()
+        public async System.Threading.Tasks.Task CreateUserAsync()
         {
             if (CheckTheEntries(R.name, R.password, R.email) != 0)
             {
                 OnWrongInput(new WrongInputEventArgs { ErrorCode = CheckTheEntries(R.name, R.password, R.email) });
+                return;
             }
 
             await CrossMedia.Current.Initialize();
@@ -35,14 +36,14 @@ namespace TestApp
             });
             //New task
             //DetectFace
-            //CreateUser in DB
+            //CreateUserAsync in DB
             await Application.Current.MainPage.Navigation.PopAsync();
         }
 
         public int CheckTheEntries(String name, String password, String email) //Security blokai Entry atzvilgiu
         {
             var noSpecials = new System.Text.RegularExpressions.Regex("^[a-zA-Z0-9]{2 ,}$"); // {2 ,} Matches the previous element at least 2 times.
-            var correctEmail = new System.Text.RegularExpressions.Regex("^[_a-z0-9-]+(.[a-z0-9-]+)@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$"); //Pasiai6kinti dar regex
+            var correctEmail = new System.Text.RegularExpressions.Regex("^[_a-z0-9-]+(.[a-z0-9-]+)@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$"); 
             var correctPassword = new System.Text.RegularExpressions.Regex("^([a-z]+[A-Z]+[0-9]+){6 ,}$");
             if (name.Replace(" ", "") == "")
             {
