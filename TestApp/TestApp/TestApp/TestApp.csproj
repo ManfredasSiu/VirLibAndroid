@@ -15,38 +15,104 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="MainWindow.xaml.cs">
+    <Compile Update="UI\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="AddBook.xaml">
+    <EmbeddedResource Update="UI\AddBook.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="BorrowBook.xaml">
+    <EmbeddedResource Update="UI\BorrowBook.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="LibraryView.xaml">
+    <EmbeddedResource Update="UI\LibraryView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="MyBooksView.xaml">
+    <EmbeddedResource Update="UI\MyBooksView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Recommended.xaml">
+    <EmbeddedResource Update="UI\Recommended.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Register.xaml">
+    <EmbeddedResource Update="UI\Register.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="ReturnBook.xaml">
+    <EmbeddedResource Update="UI\ReturnBook.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="StatsView.xaml">
+    <EmbeddedResource Update="UI\StatsView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="MainWindow.xaml">
+    <EmbeddedResource Update="UI\MainWindow.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="AddBook.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="BorrowBook.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="LibraryView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="MyBooksView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Recommended.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Register.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="ReturnBook.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="StatsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="UI\AddBook.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="UI\BorrowBook.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="UI\LibraryView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="UI\MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="UI\MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="UI\MyBooksView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="UI\Recommended.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="UI\Register.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="UI\ReturnBook.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="UI\StatsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
   </ItemGroup>
 </Project>
