@@ -1,4 +1,3 @@
-
 TestApp/TestApp/TestApp.Android/bin/
 TestApp/TestApp/TestApp.Android/obj/
 TestApp/TestApp/TestApp.Android/bin/
@@ -6,3 +5,8 @@ TestApp/TestApp/TestApp/obj/
 TestApp/TestApp/TestApp/bin/
 TestApp/WebService/bin
 TestApp/WebService/obj
+TestApp/.vs/TestApp/v15/Server/sqlite3/
+TestApp/TestApp/TestApp.Android/TestApp.Android.csproj.user
+
+TestApp/.vs/TestApp/v15/.suo
+
