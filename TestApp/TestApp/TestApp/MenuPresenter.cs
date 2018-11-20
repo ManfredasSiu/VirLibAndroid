@@ -56,6 +56,10 @@ namespace TestApp
                     {
                         var username = await CAA.RecognitionAsync(file.Path);
 
+                        RestClient WebSC = new RestClient();
+                        WebSC.endPoint = "https://virlibservice.azurewebsites.net/Database.asmx/HelloWorld";
+                        //var Response = WebSC.makeRequest();
+                        //await App.Current.MainPage.DisplayAlert("Exception", "" + Response, "OK");
                         await App.Current.MainPage.DisplayAlert("User Connected", "" + username, "OK");
                         Application.Current.MainPage = new NavigationPage(new View1());
                     }
