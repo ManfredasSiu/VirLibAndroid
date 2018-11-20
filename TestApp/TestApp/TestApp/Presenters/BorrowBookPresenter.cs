@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using Xamarin.Forms;
-using ZXing.Mobile;
 
 namespace TestApp
 {
@@ -29,12 +28,10 @@ namespace TestApp
 
         public async System.Threading.Tasks.Task ScanAsync()
         {
-            var scanner = new MobileBarcodeScanner();
-
-            var result = await scanner.Scan();
-
-            if (result != null)
-                await App.Current.MainPage.DisplayAlert("Barcode", result.ToString(), "OK");
+            await CrossMedia.Current.Initialize();
+            var file = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
+            {
+            });
 
             //Barcode scanner
 
