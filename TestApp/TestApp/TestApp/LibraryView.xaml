@@ -1,30 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="TestApp.MyBooksView">
+             x:Class="TestApp.LibraryView">
     <ContentPage.Content>
-<<<<<<< HEAD
-        <StackLayout>
-			<Label Text="My Books" HorizontalTextAlignment="Center" FontSize="30" HeightRequest="100"></Label>
-			<TableView>
-				<TableRoot>
-					<TableSection Title="Test">
-						<TextCell Text="Testing"></TextCell>
-						<TextCell Text="It f*cking works, m8"></TextCell>
-					</TableSection>
-				</TableRoot>
-			</TableView>
-			
-		</StackLayout>
-=======
     <StackLayout>
+            <Grid Margin="10" Grid.Row="1" HeightRequest="30">
+                <Label Text="All books" FontSize="20" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Row="0" Grid.Column="0"></Label>
+            </Grid>
 
-        <Grid Margin="10" Grid.Row="1" HeightRequest="30">
-            <Label Text="Your books" FontSize="20" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Row="0" Grid.Column="0"></Label>
-        </Grid>
+            <ScrollView Margin="10" Grid.Row="1" HeightRequest="430">
 
-        <ScrollView Margin="10" Grid.Row="1" HeightRequest="450">
-               
 
 
 
@@ -64,24 +49,22 @@
                             </TableSection>
 
                         </TableRoot>
-                        
+
                     </TableView>
                 </Grid>
-        </ScrollView>
+            </ScrollView>
 
-        <Grid Margin="10" RowSpacing="3">
+            <Grid Margin="10" RowSpacing="3">
 
-            <Grid.RowDefinitions>
-                <RowDefinition Height="50"></RowDefinition>
-                <RowDefinition Height="50"></RowDefinition>
-            </Grid.RowDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"></RowDefinition>
+                    <RowDefinition Height="50"></RowDefinition>
+                </Grid.RowDefinitions>
 
-            <Button Clicked="ReturnBook_Button" Text="Return Book" Grid.Row="0" Grid.Column="0" BorderColor="Black" BorderWidth="3" CornerRadius="20" TextColor="Black" BackgroundColor="LightGray"></Button>
-            <Button Clicked="Cancel_Button" Text="Cancel" Grid.Row="1" Grid.Column="0" BorderColor="Black" BorderWidth="3" CornerRadius="20" TextColor="Black" BackgroundColor="LightGray"></Button>
+                <Button Clicked="AddBook_Button" Text="Add Book" Grid.Row="0" Grid.Column="0" BorderColor="Black" BorderWidth="3" CornerRadius="20" TextColor="Black" BackgroundColor="LightGray"></Button>
+                <Button Clicked="BorrowBook_Button" Text="Borrow Book" Grid.Row="1" Grid.Column="0" BorderColor="Black" BorderWidth="3" CornerRadius="20" TextColor="Black" BackgroundColor="LightGray"></Button>
 
-        </Grid>
-        
-    </StackLayout>
->>>>>>> parent of 8e06e99... Prideti TableViews ir inerfeisai presenteriams
+            </Grid>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

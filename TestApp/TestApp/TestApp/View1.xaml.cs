@@ -10,7 +10,11 @@ using Xamarin.Forms.Xaml;
 namespace TestApp
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
+<<<<<<< HEAD:TestApp/TestApp/TestApp/View1.xaml.cs
 	public partial class View1 : ContentPage
+=======
+	public partial class MainWindow : ContentPage
+>>>>>>> parent of 8e06e99... Prideti TableViews ir inerfeisai presenteriams:TestApp/TestApp/TestApp/MainWindow.xaml.cs
 	{
         MainWindowPresenter MWP;
 		public View1 ()
