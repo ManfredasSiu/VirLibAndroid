@@ -12,7 +12,12 @@ namespace TestApp
         public LibraryViewPresenter(ILibraryView LV)
         {
             this.LV = LV;
-            LV.DataBookss.Root.Add(new TableSection());
+            
+            var TS = new TableSection("Knyga");
+            TS.Add(new TextCell() { Text = "Autorius" });
+            TS.Add(new TextCell() { Text = "Žanras" });
+            TS.Add(new TextCell() { Text = "000011" });
+            LV.DataBookss.Root.Add(TS);
         }
 
         public void AddInit()

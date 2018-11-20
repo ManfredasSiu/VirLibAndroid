@@ -65,6 +65,7 @@ namespace TestApp.Droid
 			global::AndroidHUD.Resource.Styleable.ProgressWheel_ahTextSize = global::TestApp.Droid.Resource.Styleable.ProgressWheel_ahTextSize;
 			global::Splat.Resource.String.library_name = global::TestApp.Droid.Resource.String.library_name;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::TestApp.Droid.Resource.Attribute.actionBarSize;
+			global::ZXing.Net.Mobile.Forms.Android.Resource.String.library_name = global::TestApp.Droid.Resource.String.library_name;
 		}
 		
 		public partial class Animation
