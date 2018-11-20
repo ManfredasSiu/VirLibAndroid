@@ -7,15 +7,15 @@ using Xamarin.Forms;
 
 namespace TestApp
 {
-    public partial class MainPage : ContentPage
+    public partial class MainPage : ContentPage, IMainPageView
     {
 
-        MenuPresenter MP;
+        MainPagePresenter MP;
 
         public MainPage()
         {
             InitializeComponent();
-            MP = new MenuPresenter(this);
+            MP = new MainPagePresenter(this);
         }
 
        

@@ -10,10 +10,10 @@ using Xamarin.Forms.Xaml;
 namespace TestApp
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class View1 : ContentPage
+	public partial class MainWindow : ContentPage, IMainWindowView
 	{
         MainWindowPresenter MWP;
-		public View1 ()
+		public MainWindow ()
 		{
 			InitializeComponent ();
             MWP = new MainWindowPresenter(this);

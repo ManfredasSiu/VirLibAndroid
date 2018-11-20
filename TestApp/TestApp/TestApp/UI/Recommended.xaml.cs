@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace TestApp
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class MyBooksView : ContentPage
+	public partial class Recommended : ContentPage
 	{
-		public MyBooksView ()
+		public Recommended ()
 		{
 			InitializeComponent ();
 		}
