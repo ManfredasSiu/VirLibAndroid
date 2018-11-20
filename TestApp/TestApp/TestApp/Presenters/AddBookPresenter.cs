@@ -1,7 +1,6 @@
 ﻿using Plugin.Media;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Text;
 using Xamarin.Forms;
 
@@ -21,10 +20,12 @@ namespace TestApp
             await CrossMedia.Current.Initialize();
             var file = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
             {
-                Directory = "Barcode",
-                Name = "code"
+                //Directory = "LoginFace",
+                //Name = "Face"
             });
-            File.Delete(file.Path);
+
+            //Barcode scanner
+
         }
 
         public async void InitCancel()

@@ -12,17 +12,10 @@ namespace TestApp
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class Register : ContentPage, IRegisterView
     {
-        
+        public string nameField { get => "test" ; }
         
         RegisterPresenter RP;
-
-        public string nameTxt => Nam.Text;
-
-        public string PassTxt => Pass.Text;
-
-        public string EmailTxt => Email.Text;
-
-        public Register ()
+		public Register ()
 		{
 			InitializeComponent ();
             RP = new RegisterPresenter(this);

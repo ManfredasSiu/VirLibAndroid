@@ -16,22 +16,23 @@ namespace TestApp
 
         public void StatsInit()
         {
-            RefClass.Instance.InitStatistics();
+            Application.Current.MainPage.Navigation.PushAsync(new StatsView());
         }
 
         public void RecInit()
         {
-            RefClass.Instance.InitRecomended();
+            Application.Current.MainPage.Navigation.PushAsync(new Recommended());
         }
 
         public void MBooksInit()
         {
-            RefClass.Instance.InitMyBooks();
+            Application.Current.MainPage.Navigation.PushAsync(new MyBooksView());
+
         }
 
         public void LibInit()
         {
-            RefClass.Instance.InitLibrary();
+            Application.Current.MainPage.Navigation.PushAsync(new LibraryView());
         }
     }
 }
