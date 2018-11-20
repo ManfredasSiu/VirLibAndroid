@@ -1,7 +1,12 @@
-﻿using Plugin.Media;
+﻿using Acr.UserDialogs;
+using Plugin.Media;
+using Plugin.Permissions;
+using Plugin.Permissions.Abstractions;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
+using VirtualLibrary;
 using Xamarin.Forms;
 
 namespace TestApp
@@ -17,15 +22,81 @@ namespace TestApp
         public async void CreateUser(String name, String password, String email)
         {
             await CrossMedia.Current.Initialize();
+            if (await CrossPermissions.Current.ShouldShowRequestPermissionRationaleAsync(Permission.Storage))
+                await App.Current.MainPage.DisplayAlert("Permissions", "Storage Permission Needed", "OK");
+            var storageStatus = await CrossPermissions.Current.CheckPermissionStatusAsync(Permission.Storage);
 
-            var file = CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
+            // var results = await CrossPermissions.Current.RequestPermissionsAsync(Permission.Storage);
+            if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
             {
-                Directory = "Register",
-                Name = "Face"
-            });
-            //New task
-            //DetectFace
-            //CreateUser in DB
+                await App.Current.MainPage.DisplayAlert("No Camera", "No camera available.", "OK");
+                return;
+            }
+            if (storageStatus != PermissionStatus.Granted)
+            {
+                var results = await CrossPermissions.Current.RequestPermissionsAsync(Permission.Storage);
+                if (results.ContainsKey(Permission.Storage))
+                    storageStatus = results[Permission.Storage];
+            }
+            if (storageStatus == PermissionStatus.Granted)
+            {
+                var file = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
+                {
+                    Directory = "LoginFace",
+                    Name = "Face"
+                });
+                if (file != null)
+                {
+                    ICallAzureAPI CAA = RefClass.Instance.CAA;
+                    UserDialogs.Instance.ShowLoading("Loading", MaskType.Black);
+                    string checkIfNologin;
+                    try
+                    {
+                        checkIfNologin = await CAA.RecognitionAsync(file.Path);
+                    }
+                    catch { checkIfNologin = null; }
+                    if (checkIfNologin == null)
+                    {
+                        try
+                        {
+                            var username = await CAA.FaceSave(R.nameTxt, file.Path);
+                            if (username)
+                            {
+                                try
+                                {
+                                    var WebSC = RefClass.Instance.RC;
+                                    if (await WebSC.searchUserAsync(R.nameTxt) == 0)
+                                    {
+                                        await WebSC.AddUserAsync(R.nameTxt, R.PassTxt, R.EmailTxt);
+                                        await App.Current.MainPage.DisplayAlert("User Registered", "" + username, "OK");
+                                        await Application.Current.MainPage.Navigation.PopAsync();
+                                    }
+                                    else
+                                        await App.Current.MainPage.DisplayAlert("Exception", "Oops, try again", "OK");
+                                }
+                                catch
+                                {
+                                    throw;
+                                }
+                            }
+                            else
+                                await App.Current.MainPage.DisplayAlert("Exception", "Oops, try again", "OK");
+                        }
+                        catch (Exception e)
+                        {
+                            await App.Current.MainPage.DisplayAlert("Exception", "" + e.Message, "OK");
+                        }
+                    }
+                    else await App.Current.MainPage.DisplayAlert("User exists", "User already exists, try connecting", "OK");
+                    File.Delete(file.Path);
+                    UserDialogs.Instance.HideLoading();
+                }
+            }
+            else
+            {
+                await App.Current.MainPage.DisplayAlert("Permissions Denied", "Unable to open camera", "OK");
+                return;
+            }
             await Application.Current.MainPage.Navigation.PopAsync();
         }
     }
