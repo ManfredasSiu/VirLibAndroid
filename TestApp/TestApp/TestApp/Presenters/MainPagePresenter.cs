@@ -90,6 +90,7 @@ namespace TestApp
                     }
                     catch (Exception e)
                     {
+                        UserDialogs.Instance.HideLoading();
                         await App.Current.MainPage.DisplayAlert("Exception", "error: " + e.Message, "OK");
                     }
                     File.Delete(file.Path);

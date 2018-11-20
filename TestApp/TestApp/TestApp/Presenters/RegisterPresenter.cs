@@ -59,18 +59,28 @@ namespace TestApp
                     {
                         try
                         {
-                            var username = await CAA.FaceSave(name, file.Path);
-                            try
+                            var username = await CAA.FaceSave(R.nameTxt, file.Path);
+                            if (username)
                             {
-                                var WebSC = RefClass.Instance.RC;
-                                await WebSC.AddUserAsync(R.nameTxt, R.PassTxt, R.EmailTxt);
-                                await App.Current.MainPage.DisplayAlert("User Registered", "" + username, "OK");
-                                await Application.Current.MainPage.Navigation.PopAsync();
+                                try
+                                {
+                                    var WebSC = RefClass.Instance.RC;
+                                    if (await WebSC.searchUserAsync(R.nameTxt) == 0)
+                                    {
+                                        await WebSC.AddUserAsync(R.nameTxt, R.PassTxt, R.EmailTxt);
+                                        await App.Current.MainPage.DisplayAlert("User Registered", "" + username, "OK");
+                                        await Application.Current.MainPage.Navigation.PopAsync();
+                                    }
+                                    else
+                                        await App.Current.MainPage.DisplayAlert("Exception", "Oops, try again", "OK");
+                                }
+                                catch
+                                {
+                                    throw;
+                                }
                             }
-                            catch
-                            {
-                                throw;
-                            }
+                            else
+                                await App.Current.MainPage.DisplayAlert("Exception", "Oops, try again", "OK");
                         }
                         catch (Exception e)
                         {
