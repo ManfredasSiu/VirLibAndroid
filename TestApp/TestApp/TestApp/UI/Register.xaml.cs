@@ -26,7 +26,7 @@ namespace TestApp
 		{
 			InitializeComponent ();
             RP = new RegisterPresenter(this);
-            RP.WrongInput += OnWrongInput; 
+            RP.WrongInput += ShowMessage; 
 		}
 
         public void Done_button(Object sender, EventArgs e)
@@ -39,7 +39,7 @@ namespace TestApp
             await Application.Current.MainPage.Navigation.PopAsync();
         }
 
-        public void OnWrongInput(Object sender, WrongInputEventArgs e)
+        public void ShowMessage(Object sender, WrongInputEventArgs e)
         {
             string message = "";
             switch (e.ErrorCode)
