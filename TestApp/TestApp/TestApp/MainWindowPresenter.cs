@@ -1,4 +1,4 @@
-﻿ using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 using Xamarin.Forms;
@@ -7,9 +7,9 @@ namespace TestApp
 {
     class MainWindowPresenter
     {
-        IMainWindowView MW;
+        View1 MW;
 
-        public MainWindowPresenter(IMainWindowView MW)
+        public MainWindowPresenter(View1 MW)
         {
             this.MW = MW;
         }
@@ -21,18 +21,17 @@ namespace TestApp
 
         public void RecInit()
         {
-            Application.Current.MainPage.Navigation.PushAsync(new Recommended());
+
         }
 
         public void MBooksInit()
         {
             Application.Current.MainPage.Navigation.PushAsync(new MyBooksView());
-
         }
 
         public void LibInit()
         {
-            Application.Current.MainPage.Navigation.PushAsync(new LibraryView());
+
         }
     }
 }
