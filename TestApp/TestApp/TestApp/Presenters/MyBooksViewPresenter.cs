@@ -17,9 +17,10 @@ namespace TestApp
         {
             Application.Current.MainPage.Navigation.PushAsync(new ReturnBook());
         }
+
         public void InitCancel()
         {
-            Application.Current.MainPage.Navigation.PushAsync(new MainWindow());
+            Application.Current.MainPage.Navigation.PopAsync();
         }
 
     }
