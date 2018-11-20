@@ -98,13 +98,12 @@ namespace WebService.Controllers
             return Json(userObj);
         }
         /// <inheritdoc/>
-        [HttpPost]
+        [HttpGet]
         [Route("api/book/add")]
         public IHttpActionResult AddBook([FromBody]BookInfo AddThis)
         {
             try
             {
-
                 Book book = new Book();
                 book.Name = AddThis.BookName;
                 book.Author = AddThis.BookAuthor;
@@ -123,7 +122,7 @@ namespace WebService.Controllers
             }
         }
         /// <inheritdoc/>
-        [HttpPost]
+        [HttpGet]
         [Route("api/user/add/{name}/{Password}/{email}/{Permission}")]
         public IHttpActionResult AddUser(String name, String Password, String email, int Permission)
         {
@@ -194,8 +193,8 @@ namespace WebService.Controllers
 
         }
         /// <inheritdoc/>
-        [HttpPost]
-        [Route("api/book/return/{UserID}")]
+        [HttpGet]
+        [Route("api/book/return/{UserID}/{BookID}")]
         public IHttpActionResult ReturnBook(int BookID, int UserID)
         {
             try
@@ -296,7 +295,7 @@ namespace WebService.Controllers
             }
         }
         /// <inheritdoc/>
-        [HttpPost]
+        [HttpGet]
         [Route("api/book/borrow/{UserID}/BookID")]
         public IHttpActionResult BorrowBook(int BookID, int UserID)
         {

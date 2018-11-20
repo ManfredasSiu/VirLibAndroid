@@ -3,6 +3,7 @@ using Plugin.Permissions;
 using Plugin.Permissions.Abstractions;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 using VirtualLibrary;
 using Xamarin.Forms;
@@ -55,18 +56,23 @@ namespace TestApp
                     try
                     {
                         var username = await CAA.RecognitionAsync(file.Path);
-
                         RestClient WebSC = new RestClient();
-                        WebSC.endPoint = "https://virlibservice.azurewebsites.net/Database.asmx/HelloWorld";
-                        //var Response = WebSC.makeRequest();
-                        //await App.Current.MainPage.DisplayAlert("Exception", "" + Response, "OK");
-                        await App.Current.MainPage.DisplayAlert("User Connected", "" + username, "OK");
-                        Application.Current.MainPage = new NavigationPage(new View1());
+                        try
+                        {
+                            var user = await WebSC.GetUserAsync(username);
+                            await App.Current.MainPage.DisplayAlert("User Connected", "" + user.UserID, "OK");
+                            Application.Current.MainPage = new NavigationPage(new View1());
+                        }
+                        catch
+                        {
+                            throw;
+                        }
                     }
                     catch(Exception e)
                     {
-                        await App.Current.MainPage.DisplayAlert("Exception", "" + e.Message, "OK");
+                        await App.Current.MainPage.DisplayAlert("Exception", "error: " + e.Message, "OK");
                     }
+                    File.Delete(file.Path);
                 }
             }
             else

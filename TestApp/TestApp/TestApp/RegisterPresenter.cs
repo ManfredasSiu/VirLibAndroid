@@ -3,6 +3,7 @@ using Plugin.Permissions;
 using Plugin.Permissions.Abstractions;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 using VirtualLibrary;
 using Xamarin.Forms;
@@ -51,10 +52,18 @@ namespace TestApp
                     {
                         try
                         {
-                            var username = await CAA.FaceSave(name, file.Path);
-
-                            await App.Current.MainPage.DisplayAlert("User Registered", "" + username, "OK");
-                            Application.Current.MainPage = new NavigationPage(new View1());
+                            try
+                            {
+                                RestClient WebSC = new RestClient();
+                                var username = await CAA.FaceSave(name, file.Path);
+                                //WebSC.AddUserAsync();
+                                await App.Current.MainPage.DisplayAlert("User Registered", "" + username, "OK");
+                                Application.Current.MainPage = new NavigationPage(new View1());
+                            }
+                            catch
+                            {
+                                throw;
+                            }
                         }
                         catch (Exception e)
                         {
@@ -62,6 +71,7 @@ namespace TestApp
                         }
                     }
                     else await App.Current.MainPage.DisplayAlert("User exists", "User already exists, try connecting", "OK");
+                    File.Delete(file.Path);
                 }
             }
             else

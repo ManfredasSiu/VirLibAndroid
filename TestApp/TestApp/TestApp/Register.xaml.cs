@@ -12,6 +12,7 @@ namespace TestApp
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class Register : ContentPage
 	{
+
         RegisterPresenter RP;
 		public Register ()
 		{
