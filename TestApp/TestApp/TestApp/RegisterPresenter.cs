@@ -21,9 +21,10 @@ namespace TestApp
 
         public async System.Threading.Tasks.Task CreateUserAsync()
         {
-            if (CheckTheEntries(R.name, R.password, R.email) != 0)
+            int check = CheckTheEntries(R.name, R.password, R.email);
+            if (check != 0)
             {
-                OnWrongInput(new WrongInputEventArgs { ErrorCode = CheckTheEntries(R.name, R.password, R.email) });
+                OnWrongInput(new WrongInputEventArgs { ErrorCode = check });
                 return;
             }
 
