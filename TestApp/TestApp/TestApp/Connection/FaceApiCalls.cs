@@ -13,18 +13,22 @@ namespace VirtualLibrary
 {
     class FaceApiCalls : ICallAzureAPI
     {
-        String _groupName = "Users", _groupId = "users";
+        String _groupName = "UsersAndroid", _groupId = "usersAndroid";
         private IFaceServiceClient faceServiceClient;
 
         public FaceApiCalls()
         {
-            //CreateGroup();
-            faceServiceClient = new FaceServiceClient("782b7ef7c9ac484f8598b446283ea5cd", "https://northeurope.api.cognitive.microsoft.com/face/v1.0");
+            try
+            {
+                faceServiceClient = new FaceServiceClient("782b7ef7c9ac484f8598b446283ea5cd", "https://northeurope.api.cognitive.microsoft.com/face/v1.0");
+                CreateGroup();
+            }
+            finally { }
         }
 
         private async void CreateGroup()
         {
-            //await faceServiceClient.CreatePersonGroupAsync(_groupId, _groupName);
+            await faceServiceClient.CreatePersonGroupAsync(_groupId, _groupName);
         }
 
         public async Task<bool> FaceSave(string vardas, string imagestr) //Veido issaugojimas Resource grupeje

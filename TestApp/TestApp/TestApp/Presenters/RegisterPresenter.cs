@@ -1,4 +1,5 @@
-﻿using Plugin.Media;
+﻿using Acr.UserDialogs;
+using Plugin.Media;
 using Plugin.Permissions;
 using Plugin.Permissions.Abstractions;
 using System;
@@ -50,26 +51,29 @@ namespace TestApp
                     var checkIfNologin = await CAA.RecognitionAsync(file.Path);
                     if (checkIfNologin == null)
                     {
+                        UserDialogs.Instance.ShowLoading("Loading", MaskType.Black);
                         try
                         {
                             var username = await CAA.FaceSave(name, file.Path);
                             try
                             {
+                                
                                 var WebSC = RefClass.Instance.RC;
                                 await WebSC.AddUserAsync(R.nameTxt, R.PassTxt, R.EmailTxt);
                                 await App.Current.MainPage.DisplayAlert("User Registered", "" + username, "OK");
                                 await Application.Current.MainPage.Navigation.PopAsync();
+                                
                             }
                             catch
                             {
                                 throw;
                             }
-
                         }
                         catch (Exception e)
                         {
                             await App.Current.MainPage.DisplayAlert("Exception", "" + e.Message, "OK");
                         }
+                        UserDialogs.Instance.HideLoading();
                     }
                     else await App.Current.MainPage.DisplayAlert("User exists", "User already exists, try connecting", "OK");
                     File.Delete(file.Path);

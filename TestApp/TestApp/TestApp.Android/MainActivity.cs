@@ -9,6 +9,7 @@ using Android.OS;
 using Plugin.Permissions;
 using Plugin.CurrentActivity;
 using Plugin.Media;
+using Acr.UserDialogs;
 
 namespace TestApp.Droid
 {
@@ -23,6 +24,7 @@ namespace TestApp.Droid
             //CrossCurrentActivity.Current.Init(this, savedInstanceState);
             CrossCurrentActivity.Current.Activity = this;
             CrossMedia.Current.Initialize();
+            UserDialogs.Init(this);
             base.OnCreate(savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());

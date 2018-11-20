@@ -45,7 +45,7 @@ namespace TestApp
 
         public void InitMain()
         {
-            Application.Current.MainPage.Navigation.PushAsync(new MainWindow());
+            Application.Current.MainPage = new NavigationPage(new MainWindow());
         }
 
         public void InitStatistics()

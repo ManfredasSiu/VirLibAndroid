@@ -1,4 +1,5 @@
-﻿using Plugin.Media;
+﻿using Acr.UserDialogs;
+using Plugin.Media;
 using Plugin.Permissions;
 using Plugin.Permissions.Abstractions;
 using System;
@@ -46,6 +47,7 @@ namespace TestApp
             }
             if (storageStatus == PermissionStatus.Granted)
             {
+                
                 var file = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
                 {
                     Directory = "LoginFace",
@@ -53,12 +55,15 @@ namespace TestApp
                 });
                 if (file != null)
                 {
+                    
                     ICallAzureAPI CAA = RefClass.Instance.CAA;
                     try
                     {
+                        UserDialogs.Instance.ShowLoading("Loading", MaskType.Black);
                         var username = await CAA.RecognitionAsync(file.Path);
                         try
                         {
+                            
                             var WebSC = RefClass.Instance.RC;
                             var user = await WebSC.GetUserAsync(username);
                             var UserBook = await WebSC.GetBooksReadAsync(user.UserID);
@@ -73,17 +78,22 @@ namespace TestApp
                                 BooksRead = BooksRea
                             };
                             RefClass.Instance.InitMain();
+                            
                         }
                         catch
                         {
+
+                            UserDialogs.Instance.HideLoading();
                             throw;
                         }
+                        UserDialogs.Instance.HideLoading();
                     }
                     catch (Exception e)
                     {
                         await App.Current.MainPage.DisplayAlert("Exception", "error: " + e.Message, "OK");
                     }
                     File.Delete(file.Path);
+                    
                 }
             }
             else
