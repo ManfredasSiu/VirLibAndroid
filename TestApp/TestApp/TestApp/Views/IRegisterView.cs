@@ -6,6 +6,8 @@ namespace TestApp
 {
     interface IRegisterView
     {
-        //pakeitimas ir tiek
+        String nameTxt { get; }
+        String PassTxt { get; }
+        String EmailTxt { get; }
     }
 }
