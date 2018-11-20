@@ -6,6 +6,6 @@ namespace TestApp
 {
     interface IRegisterView
     {
-
+        //pakeitimas ir tiek
     }
 }
