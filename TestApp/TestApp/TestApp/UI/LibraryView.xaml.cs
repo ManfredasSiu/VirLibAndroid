@@ -16,7 +16,7 @@ namespace TestApp
 
         LibraryViewPresenter LVP;
 
-        //public TableView DataBookss => DataBooks;
+        public TableView DataBookss => DataBooks;
 
         
 

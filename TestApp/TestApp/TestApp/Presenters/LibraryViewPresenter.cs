@@ -12,6 +12,7 @@ namespace TestApp
         public LibraryViewPresenter(ILibraryView LV)
         {
             this.LV = LV;
+            LV.DataBookss.Root.Add(new TableSection());
         }
 
         public void AddInit()
