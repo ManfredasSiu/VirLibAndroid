@@ -36,9 +36,9 @@ namespace TestApp
         }
 
 
-        private void ScanBarcode_Button(object sender, EventArgs e)
+        private async void ScanBarcode_Button(object sender, EventArgs e)
         {
-            ABP.ScanAsync();
+            await ABP.ScanAsync();
         }
 
         private void Cancel_Button(object sender, EventArgs e)

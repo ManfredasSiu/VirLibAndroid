@@ -20,9 +20,9 @@ namespace TestApp
 
        
 
-        private void Login_button(object sender, EventArgs e)
+        private async void Login_button(object sender, EventArgs e)
         {
-            MP.LoginAsync();
+            await MP.LoginAsync();
         }
 
         private void Register_button(object sender, EventArgs e)

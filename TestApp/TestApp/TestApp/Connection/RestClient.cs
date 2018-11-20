@@ -35,7 +35,18 @@ namespace TestApp
         public async Task<int> AddBookAsync(Book book)
         {
             var uri = new Uri("https://webservicevirlib.azurewebsites.net/api/book/add");
-            var response = await HttpClient.PostAsJsonAsync(uri, book);
+            var jsonContent = JsonConvert.SerializeObject(book, new JsonSerializerSettings
+            {
+                NullValueHandling = NullValueHandling.Ignore
+            });
+
+            var request = new HttpRequestMessage(HttpMethod.Post, uri)
+            {
+                Content = new StringContent(jsonContent, Encoding.UTF8, "application/json")
+            };
+
+            var response = await HttpClient.SendAsync(request);
+
             if (!response.IsSuccessStatusCode)
             {
                 throw new ArgumentException();
