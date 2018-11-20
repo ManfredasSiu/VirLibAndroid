@@ -11,14 +11,8 @@
         </Grid>
 
         <ScrollView Margin="10" Grid.Row="1" HeightRequest="450">
-               
-
-
-
+            
                 <Grid Margin="25">
-
-
-
                     <Grid.RowDefinitions>
                         <RowDefinition Height="50"></RowDefinition>
                         <RowDefinition Height="AUTO"></RowDefinition>

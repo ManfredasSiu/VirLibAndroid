@@ -7,9 +7,9 @@ namespace TestApp
 {
     class LibraryViewPresenter
     {
-        LibraryView LV;
+        ILibraryView LV;
 
-        public LibraryViewPresenter(LibraryView LV)
+        public LibraryViewPresenter(ILibraryView LV)
         {
             this.LV = LV;
         }

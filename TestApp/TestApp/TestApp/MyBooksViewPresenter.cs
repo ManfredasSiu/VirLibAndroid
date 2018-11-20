@@ -7,9 +7,9 @@ namespace TestApp
 {
     class MyBooksViewPresenter
     {
-        MyBooksView MBV;
+        IMyBooksView MBV;
 
-        public MyBooksViewPresenter(MyBooksView MBV)
+        public MyBooksViewPresenter(IMyBooksView MBV)
         {
             this.MBV = MBV;
         }

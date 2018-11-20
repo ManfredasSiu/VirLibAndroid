@@ -8,11 +8,12 @@ namespace TestApp
 {
     class BorrowBookPresenter
     {
-        BorrowBook BB;
 
-        public BorrowBookPresenter(BorrowBook BB)
+        IBorrowBview BB;
+        public BorrowBookPresenter(IBorrowBview BB)
         {
             this.BB = BB;
+            
         }
 
         public void InitBor()

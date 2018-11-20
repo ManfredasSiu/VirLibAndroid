@@ -9,8 +9,8 @@ using Xamarin.Forms.Xaml;
 namespace TestApp
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class ReturnBook : ContentPage
-	{
+	public partial class ReturnBook : ContentPage, IReturnBookView
+    {
 
 	
         ReturnBookPresenter RBP;

@@ -8,9 +8,9 @@ namespace TestApp
 {
     class ReturnBookPresenter
     {
-        ReturnBook RB;
+        IReturnBookView RB;
 
-        public ReturnBookPresenter(ReturnBook RB)
+        public ReturnBookPresenter(IReturnBookView RB)
         {
             this.RB = RB;
         }

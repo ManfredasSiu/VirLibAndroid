@@ -18,8 +18,9 @@
                             <RowDefinition Height="AUTO"></RowDefinition>
                             <RowDefinition Height="AUTO"></RowDefinition>
                             <RowDefinition Height="AUTO"></RowDefinition>
-                            
-                        </Grid.RowDefinitions>
+                            <RowDefinition Height="AUTO"></RowDefinition>
+
+                    </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"></ColumnDefinition>
                             <ColumnDefinition Width="*"></ColumnDefinition>
@@ -46,9 +47,10 @@
                         <Label Text="Barcode" FontSize="16" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Row="6" Grid.Column="0"></Label>
                         <Entry x:Name="code" Placeholder="123456" Grid.Row="6" Grid.Column="1"/>
 
-                        <Button Clicked="Cancel_Button" Text="Cancel" VerticalOptions="End" HeightRequest="50" Margin="5" Grid.Row="7" BorderColor="Black" BorderWidth="3" CornerRadius="20" Grid.Column="0"></Button>
+                        <Button Clicked="Cancel_Button" Text="Cancel" VerticalOptions="End" HeightRequest="50" Margin="5" Grid.Row="8" BorderColor="Black" BorderWidth="3" CornerRadius="20" Grid.Column="0"></Button>
                         <Button Clicked="ScanBarcode_Button" Text="Scan" VerticalOptions="End" HeightRequest="50" Margin="5" Grid.Row="7" BorderColor="Black" BorderWidth="3" CornerRadius="20" Grid.Column="1"></Button>
-                    </Grid>
+                        <Button Clicked="AddBook_Button" Text="Add" VerticalOptions="End" HeightRequest="50" Margin="5" Grid.Row="7" BorderColor="Black" BorderWidth="3" CornerRadius="20" Grid.Column="0"></Button>
+                </Grid>
                 </Grid>
             </ScrollView>
 

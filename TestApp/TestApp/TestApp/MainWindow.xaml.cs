@@ -10,7 +10,7 @@ using Xamarin.Forms.Xaml;
 namespace TestApp
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class MainWindow : ContentPage
+	public partial class MainWindow : ContentPage, IMainWindowView
 	{
         MainWindowPresenter MWP;
 		public MainWindow ()

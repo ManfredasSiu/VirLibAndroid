@@ -8,9 +8,9 @@ namespace TestApp
 {
     class MainPagePresenter
     {
-        MainPage MP;
+        IMainPageView MP;
 
-        public MainPagePresenter(MainPage MP)
+        public MainPagePresenter(IMainPageView MP)
         {
             this.MP = MP;
         }

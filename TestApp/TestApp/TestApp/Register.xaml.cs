@@ -10,8 +10,8 @@ using Xamarin.Forms.Xaml;
 namespace TestApp
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class Register : ContentPage
-	{
+	public partial class Register : ContentPage, IRegisterView
+    {
         public string nameField { get => "test" ; }
         
         RegisterPresenter RP;

@@ -7,9 +7,9 @@ namespace TestApp
 {
     class MainWindowPresenter
     {
-        MainWindow MW;
+        IMainWindowView MW;
 
-        public MainWindowPresenter(MainWindow MW)
+        public MainWindowPresenter(IMainWindowView MW)
         {
             this.MW = MW;
         }

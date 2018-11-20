@@ -10,10 +10,12 @@ using Xamarin.Forms.Xaml;
 namespace TestApp
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class BorrowBook : ContentPage
+	public partial class BorrowBook : ContentPage, IBorrowBview
 	{
 		
         BorrowBookPresenter BBP;
+
+        public string codeTXT => code.Text;
 
         public BorrowBook()
         {

@@ -7,7 +7,7 @@ using Xamarin.Forms;
 
 namespace TestApp
 {
-    public partial class MainPage : ContentPage
+    public partial class MainPage : ContentPage, IMainPageView
     {
 
         MainPagePresenter MP;
