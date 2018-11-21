@@ -296,7 +296,7 @@ namespace WebService.Controllers
         }
         /// <inheritdoc/>
         [HttpGet]
-        [Route("api/book/borrow/{UserID}/BookID")]
+        [Route("api/book/borrow/{UserID}/{BookID}")]
         public IHttpActionResult BorrowBook(int BookID, int UserID)
         {
             try

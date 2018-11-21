@@ -67,8 +67,6 @@ namespace TestApp
                             var user = await WebSC.GetUserAsync(username);
                             if (user != null)
                             {
-
-
                                 var UserBook = await WebSC.GetBooksReadAsync(user.UserID);
                                 var BooksRea = await WebSC.GetUserBooksAsync(user.UserID);
                                 RefClass.Instance.GB.CurrentUser = new UserData()
