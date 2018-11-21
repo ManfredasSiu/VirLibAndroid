@@ -15,6 +15,8 @@ namespace TestApp
 	
         ReturnBookPresenter RBP;
 
+        public string codeTXT => code.Text;
+
         public ReturnBook()
         {
             InitializeComponent();

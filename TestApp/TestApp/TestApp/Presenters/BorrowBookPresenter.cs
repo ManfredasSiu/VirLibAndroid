@@ -16,9 +16,29 @@ namespace TestApp
             
         }
 
-        public void InitBor()
+        public async void InitBor()
         {
-            //some code to change cuurentuserbooks and etc.
+            String barcode = BB.codeTXT;
+            Book book = RefClass.Instance.GB.allBooks.Find(x => x.BookCode == barcode);
+            Book arne = RefClass.Instance.GB.CurrentUser.UserBooks.Find(x => x.BookCode == barcode);
+            
+            if (arne.BookCode != barcode && book != null)
+            {
+                
+                var WebSC = RefClass.Instance.RC;
+                try
+                {
+                    await WebSC.BorrowBookAsync(RefClass.Instance.GB.CurrentUser.UserID, book);
+                    await App.Current.MainPage.DisplayAlert("Congratulations", "This book is borrowed", "OK");
+                }
+                catch (Exception ex)
+                { Console.WriteLine(ex.Message); }
+
+            }
+            else
+            {
+                await App.Current.MainPage.DisplayAlert("Warning", "You already have this book or barcode is not corrent", "OK");
+            }
         }
 
         public async void InitCancel()

@@ -6,5 +6,6 @@ namespace TestApp
 {
     interface IReturnBookView
     {
+        String codeTXT { get; }
     }
 }
