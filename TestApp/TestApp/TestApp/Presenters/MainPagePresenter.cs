@@ -90,7 +90,7 @@ namespace TestApp
                             throw;
                         }
                     }
-                    catch (Exception e)
+                    catch 
                     {
                         await App.Current.MainPage.DisplayAlert("Exception", "Oops! We didn't find your face in our database. Try again", "OK");
                     }

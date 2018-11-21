@@ -35,7 +35,6 @@ namespace TestApp
         public async Task<int> AddBookAsync(Book book)
         {
             var uri = new Uri("https://webservicevirlib.azurewebsites.net/api/book/add");
-
             var jsonContent = JsonConvert.SerializeObject(book, new JsonSerializerSettings
             {
                 NullValueHandling = NullValueHandling.Ignore
