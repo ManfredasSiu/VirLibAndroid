@@ -119,7 +119,6 @@ namespace TestApp
 
             var noSpecials = new System.Text.RegularExpressions.Regex("^[a-zA-Z0-9 ]*$"); // {2 ,} Matches the previous element at least 2 times.
             var correctEmail = new System.Text.RegularExpressions.Regex("^[_a-z0-9-]+(.[a-z0-9-]+)@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$");
-            var correctPassword = new System.Text.RegularExpressions.Regex("^([a-z]+[A-Z]+[0-9]+){6 ,}$");
             if (name == null|| name.Replace(" ", "") == "" )
             {
                 return 1;
@@ -135,10 +134,6 @@ namespace TestApp
             else if (!noSpecials.IsMatch(name))
             {
                 return 4;
-            }
-            else if (!correctPassword.IsMatch(password))
-            {
-                return 5;
             }
             else if (!correctEmail.IsMatch(email))
             {
