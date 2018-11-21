@@ -12,6 +12,20 @@ namespace TestApp
         public MainWindowPresenter(IMainWindowView MW)
         {
             this.MW = MW;
+            string statusas;
+            statusas = RefClass.Instance.GB.CurrentUser.UserStatus;
+            if (statusas == "0")
+            {
+                MW.StatusLabeltxt = "Status: Reader";
+            }
+            else
+            {
+                MW.StatusLabeltxt = "Status: Admin";
+
+            }
+            string vardas;
+            vardas = RefClass.Instance.GB.CurrentUser.UserName;
+            MW.NameLabeltxt = "Name: " + vardas;
         }
 
         public void StatsInit()
