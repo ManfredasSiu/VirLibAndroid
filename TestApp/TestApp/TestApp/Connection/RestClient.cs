@@ -96,6 +96,7 @@ namespace TestApp
                 throw new ArgumentException();
             }
             var content = await response.Content.ReadAsStringAsync();
+            OnDataAddedReached(EventArgs.Empty);
             return JsonConvert.DeserializeObject<int>(content);
         }
 
@@ -108,6 +109,7 @@ namespace TestApp
                 throw new ArgumentException();
             }
             var content = await response.Content.ReadAsStringAsync();
+            OnDataAddedReached(EventArgs.Empty);
             return JsonConvert.DeserializeObject<int>(content);
         }
 

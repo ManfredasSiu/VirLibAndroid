@@ -1,4 +1,5 @@
-﻿using Plugin.Media;
+﻿using Acr.UserDialogs;
+using Plugin.Media;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -52,10 +53,12 @@ namespace TestApp
             var WebSC = RefClass.Instance.RC;
             try
             {
+                UserDialogs.Instance.ShowLoading("Checking data", MaskType.Black);
                 await WebSC.AddBookAsync(book);
                 await App.Current.MainPage.DisplayAlert("Congratulations", "Book is added", "OK");
+                UserDialogs.Instance.HideLoading();
             }
-            catch (Exception ex){ Console.WriteLine(ex.Message); }
+            catch (Exception ex){ Console.WriteLine(ex.Message); UserDialogs.Instance.HideLoading(); }
             
         }
         //tikrina ar add book lakai atitinka salygas ir knyga galima prideti
