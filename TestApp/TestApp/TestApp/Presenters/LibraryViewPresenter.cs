@@ -12,16 +12,20 @@ namespace TestApp
         public LibraryViewPresenter(ILibraryView LV)
         {
             this.LV = LV;
+            RefClass.Instance.RC.DataAdded += Eventhandler;
             LoadLibrary();
+        }
 
-            
+        private void Eventhandler(Object sender, EventArgs e)
+        {
+            LoadLibrary();
         }
 
         private async void LoadLibrary()
         {
             List<Book> list = new List<Book>();
             var WebSC = RefClass.Instance.RC;
-            list = await WebSC.GetABReadAsync();
+            list = await WebSC.GetABAsync();
             foreach (Book book in list)
             { 
                 var TS = new TableSection(book.BookName);

@@ -6,12 +6,19 @@ using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using TestApp.Connection;
 
 namespace TestApp
 {
 
-    class RestClient
+    class RestClient : IRest
     {
+        public event EventHandler DataAdded;
+
+        protected virtual void OnDataAddedReached(EventArgs e)
+        {
+            DataAdded?.Invoke(this, e);
+        }
 
         public HttpClient HttpClient { get; set; }
 
@@ -52,6 +59,7 @@ namespace TestApp
                 throw new ArgumentException();
             }
             var content = await response.Content.ReadAsStringAsync();
+            OnDataAddedReached(EventArgs.Empty);
             return JsonConvert.DeserializeObject<int>(content);
         }
 

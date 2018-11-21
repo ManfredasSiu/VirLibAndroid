@@ -6,24 +6,28 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using System.Threading.Tasks;
 using VirtualLibrary;
 using Xamarin.Forms;
 
 namespace TestApp
 {
+
     class RegisterPresenter
     {
+        RestClient WebSC;
         IRegisterView R;
         public event EventHandler<WrongInputEventArgs> WrongInput; 
 
         public RegisterPresenter(IRegisterView R)
         {
             this.R = R;
+            WebSC = RefClass.Instance.RC;
         }
 
         public async void CreateUser(String name, String password, String email)
         {
-            int check = CheckTheEntries(name, password, email);
+            int check = await CheckTheEntries(name, password, email);
             if (check != 0)
             {
                 OnWrongInput(new WrongInputEventArgs { ErrorCode = check });
@@ -74,14 +78,9 @@ namespace TestApp
                                 try
                                 {
                                     var WebSC = RefClass.Instance.RC;
-                                    if (await WebSC.searchUserAsync(R.nameTxt) == 0)
-                                    {
-                                        await WebSC.AddUserAsync(R.nameTxt, R.PassTxt, R.EmailTxt);
-                                        await App.Current.MainPage.DisplayAlert("User Registered", "" + username, "OK");
-                                        await Application.Current.MainPage.Navigation.PopAsync();
-                                    }
-                                    else
-                                        await App.Current.MainPage.DisplayAlert("Exception", "Oops, try again", "OK");
+                                    await WebSC.AddUserAsync(R.nameTxt, R.PassTxt, R.EmailTxt);
+                                    await App.Current.MainPage.DisplayAlert("User Registered", "" + username, "OK");
+                                    await Application.Current.MainPage.Navigation.PopAsync();
                                 }
                                 catch
                                 {
@@ -109,7 +108,7 @@ namespace TestApp
             await Application.Current.MainPage.Navigation.PopAsync();
         }
 
-        public int CheckTheEntries(String name, String password, String email) //Security blokai Entry atzvilgiu
+        public async Task<int> CheckTheEntries(String name, String password, String email) //Security blokai Entry atzvilgiu
         {
             var noSpecials = new System.Text.RegularExpressions.Regex("^[a-zA-Z0-9]{2 ,}$"); // {2 ,} Matches the previous element at least 2 times.
             var correctEmail = new System.Text.RegularExpressions.Regex("^[_a-z0-9-]+(.[a-z0-9-]+)@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$");
@@ -138,12 +137,10 @@ namespace TestApp
             {
                 return 6;
             }
-            /*
-            else if (DB.SearchUser(name) == 2)
+            if (await WebSC.searchUserAsync(R.nameTxt) == 0)
             {
                 return 7;
             }
-            */
             return 0;
         }
 
