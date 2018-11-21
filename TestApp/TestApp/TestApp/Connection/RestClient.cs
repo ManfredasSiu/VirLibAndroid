@@ -128,7 +128,7 @@ namespace TestApp
             return JsonConvert.DeserializeObject<List<Book>>(content);
         }
 
-        public async Task<List<Book>> GetABReadAsync()
+        public async Task<List<Book>> GetABAsync()
         {
             var uri = new Uri("https://webservicevirlib.azurewebsites.net/api/book/getab");
             var response = await HttpClient.GetAsync(uri);
