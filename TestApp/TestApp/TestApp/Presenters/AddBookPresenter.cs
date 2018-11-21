@@ -64,7 +64,7 @@ namespace TestApp
             var noSpecials = new System.Text.RegularExpressions.Regex("^[a-zA-Z0-9]*$"); //Regexas ivedimui be specealiu simboliu
             foreach (string tb in TBs)
             {
-                if (tb.Replace(" ", "") == "")
+                if (tb == null || tb.Replace(" ", "") == "")
                     return 1;
                 else if (!noSpecials.IsMatch(tb.Replace(" ", "")))
                     return 3;

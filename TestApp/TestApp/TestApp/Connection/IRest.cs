@@ -8,6 +8,8 @@ namespace TestApp.Connection
 {
     interface IRest
     {
+        event EventHandler DataAdded;
+
         HttpClient HttpClient { get; set; }
 
         Task<User> GetUserAsync(string name);

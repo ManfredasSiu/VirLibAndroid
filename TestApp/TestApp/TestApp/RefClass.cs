@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using TestApp.Connection;
 using TestApp.Data;
 using VirtualLibrary;
 using Xamarin.Forms;
@@ -32,7 +33,7 @@ namespace TestApp
 
         public GlobalData GB = new GlobalData();
 
-        public RestClient RC = new RestClient();
+        public IRest RC = new RestClient();
 
         public ICallAzureAPI CAA = new FaceApiCalls();
 

@@ -26,12 +26,18 @@ namespace TestApp
 		{
 			InitializeComponent ();
             RP = new RegisterPresenter(this);
-            RP.WrongInput += ShowMessage; 
+            try
+            {
+                RP.WrongInput += ShowMessage;
+            }catch(Exception e)
+            {
+                App.Current.MainPage.DisplayAlert("Exception", "Reopen Program", "OK");
+            }
 		}
 
         public void Done_button(Object sender, EventArgs e)
         {
-            RP.CreateUser(name: Nam.ToString(), password: Pass.ToString(), email: Email.ToString());
+            RP.CreateUser(name: Nam.Text, password: Pass.Text, email: Email.Text);
         }
 
         public async void Cancel_button(Object sender, EventArgs e)
