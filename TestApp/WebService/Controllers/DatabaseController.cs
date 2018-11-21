@@ -98,7 +98,7 @@ namespace WebService.Controllers
             return Json(userObj);
         }
         /// <inheritdoc/>
-        [HttpGet]
+        [HttpPost]
         [Route("api/book/add")]
         public IHttpActionResult AddBook([FromBody]BookInfo AddThis)
         {
