@@ -18,11 +18,7 @@
                     <TableView  Grid.Row="1" x:Name="DataBooks">
 
                         <TableRoot >
-                            <TableSection Title="Dievų miškas">
-                                <TextCell Text="Balys Sruoga"/>
-                                <TextCell Text="Žanras"/>
-                                <TextCell Text="000023"/>
-                            </TableSection> 
+                             
 
                         </TableRoot>
 

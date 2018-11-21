@@ -13,10 +13,15 @@ namespace TestApp
 	public partial class MainWindow : ContentPage, IMainWindowView
 	{
         MainWindowPresenter MWP;
-		public MainWindow ()
+
+        public String NameLabeltxt { set => NameLabel.Text = value; }
+        public String StatusLabeltxt { set => StatusLabel.Text = value; }
+
+        public MainWindow ()
 		{
 			InitializeComponent ();
             MWP = new MainWindowPresenter(this);
+
         }
 
         private void Stats_button(object sender, EventArgs e)

@@ -10,22 +10,24 @@
 		<Grid.ColumnDefinitions>
 			<ColumnDefinition Width="*"></ColumnDefinition>
 		</Grid.ColumnDefinitions>
-
-		<Grid Grid.Row="0">
+        
+        <Grid Grid.Row="0">
 			<Grid.RowDefinitions>
 				<RowDefinition Height="100"></RowDefinition>
 			</Grid.RowDefinitions>
-			<Grid.ColumnDefinitions>
-				<ColumnDefinition Width="100"></ColumnDefinition>
-				<ColumnDefinition Width="*"></ColumnDefinition>
-			</Grid.ColumnDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
 
-			<Grid Grid.Row="0" Grid.Column="1" VerticalOptions="Center">
+            <Grid Grid.Row="0" Grid.Column="1" VerticalOptions="Center">
 				<Grid.RowDefinitions>
 					<RowDefinition Height="AUTO"></RowDefinition>
 					<RowDefinition Height="AUTO"></RowDefinition>
 				</Grid.RowDefinitions>
+                
 				<Label x:Name="NameLabel" Text="Name:" FontSize="20" Grid.Row="0"></Label>
+                
 				<Label x:Name="StatusLabel" Text="Status:" FontSize="20" Grid.Row="1"></Label>
 			</Grid>
 

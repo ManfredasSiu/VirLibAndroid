@@ -7,39 +7,49 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace VirtualLibrary
 {
     class FaceApiCalls : ICallAzureAPI
     {
-        String _groupName = "Users", _groupId = "users";
+        String _groupName = "UsersAndroid", _groupId = "usersdroid";
         private IFaceServiceClient faceServiceClient;
 
         public FaceApiCalls()
         {
-            //CreateGroup();
             faceServiceClient = new FaceServiceClient("782b7ef7c9ac484f8598b446283ea5cd", "https://northeurope.api.cognitive.microsoft.com/face/v1.0");
+            //CreateGroup();
         }
 
         private async void CreateGroup()
         {
-            //await faceServiceClient.CreatePersonGroupAsync(_groupId, _groupName);
+            try { 
+                await faceServiceClient.CreatePersonGroupAsync(_groupId, _groupName);//CreatePersonGroupAsync(_groupId, _groupName);
+            }
+            catch(FaceAPIException e)
+            {
+                Console.WriteLine("----------------------------------------------- " + e.ErrorMessage);
+            }
         }
 
         public async Task<bool> FaceSave(string vardas, string imagestr) //Veido issaugojimas Resource grupeje
         { 
             CreatePersonResult person = await faceServiceClient.CreatePersonAsync(_groupId, vardas); //Userio sukurimas
-            try
-            { 
-                await faceServiceClient.AddPersonFaceAsync(_groupId, person.PersonId, imagestr);  //Veido pridejimas
-                await faceServiceClient.TrainPersonGroupAsync(_groupId); //Grupe istreniruojama su nauju veidu
-                return true;
-            }
-            catch(Exception e)
+            using (Stream imageFileStream = File.OpenRead(imagestr))
             {
-                await faceServiceClient.DeletePersonAsync(_groupId, person.PersonId); //Jei treniravimas nepavyko - istrinti zmogu is grupes
-                return false;
+                try
+                {
+                    await faceServiceClient.AddPersonFaceAsync(_groupId, person.PersonId, imageFileStream);  //Veido pridejimas
+                    await faceServiceClient.TrainPersonGroupAsync(_groupId); //Grupe istreniruojama su nauju veidu
+                    return true;
+                }
+                catch 
+                {
+                    await faceServiceClient.DeletePersonAsync(_groupId, person.PersonId); //Jei treniravimas nepavyko - istrinti zmogu is grupes
+                    return false;
+                }
             }
         }
 
@@ -47,6 +57,7 @@ namespace VirtualLibrary
         {
             try
             {
+                
                 using (Stream imageFileStream = File.OpenRead(imageFilePath))
                 {
                     var faces = await faceServiceClient.DetectAsync(imageFileStream,

@@ -21,9 +21,9 @@ namespace TestApp
             RBP = new ReturnBookPresenter(this);
         }
 
-        private void ScanBarcode_Button(object sender, EventArgs e)
+        private async void ScanBarcode_Button(object sender, EventArgs e)
         {
-            RBP.ScanAsync();
+            await RBP.ScanAsync();
         }
 
         private void Ret_Button(object sender, EventArgs e)

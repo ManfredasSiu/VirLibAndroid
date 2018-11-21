@@ -28,9 +28,9 @@ namespace TestApp
             BBP.InitCancel();
         }
 
-        public void ScanBarcode_Button(object sender, EventArgs e)
+        public async void ScanBarcode_Button(object sender, EventArgs e)
         {
-            BBP.ScanAsync();
+            await BBP.ScanAsync();
         }
         public void Bor_Button(object sender, EventArgs e)
         {

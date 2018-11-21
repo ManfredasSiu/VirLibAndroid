@@ -12,27 +12,40 @@ namespace TestApp
         public MainWindowPresenter(IMainWindowView MW)
         {
             this.MW = MW;
+            string statusas;
+            statusas = RefClass.Instance.GB.CurrentUser.UserStatus;
+            if (statusas == "0")
+            {
+                MW.StatusLabeltxt = "Status: Reader";
+            }
+            else
+            {
+                MW.StatusLabeltxt = "Status: Admin";
+
+            }
+            string vardas;
+            vardas = RefClass.Instance.GB.CurrentUser.UserName;
+            MW.NameLabeltxt = "Name: " + vardas;
         }
 
         public void StatsInit()
         {
-            Application.Current.MainPage.Navigation.PushAsync(new StatsView());
+            RefClass.Instance.InitStatistics();
         }
 
         public void RecInit()
         {
-            Application.Current.MainPage.Navigation.PushAsync(new Recommended());
+            RefClass.Instance.InitRecomended();
         }
 
         public void MBooksInit()
         {
-            Application.Current.MainPage.Navigation.PushAsync(new MyBooksView());
-
+            RefClass.Instance.InitMyBooks();
         }
 
         public void LibInit()
         {
-            Application.Current.MainPage.Navigation.PushAsync(new LibraryView());
+            RefClass.Instance.InitLibrary();
         }
     }
 }
