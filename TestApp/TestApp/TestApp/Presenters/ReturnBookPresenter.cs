@@ -17,9 +17,26 @@ namespace TestApp
         }
 
 
-        public void Ret_Init()
+        public async void Ret_Init()
         {
-            //some code to change cuurentuserbooks and etc.
+            String barcode = RB.codeTXT;
+            Book book = RefClass.Instance.GB.CurrentUser.UserBooks.Find(x => x.BookCode == barcode);
+            if (book.BookCode == barcode) //NES JEI NERA LYGU, REISKIAS FIND NERADO TOKIOS KNYGOS.LOGISKA?
+            {
+                var WebSC = RefClass.Instance.RC;
+                try
+                {
+                    await WebSC.ReturnBookAsync(RefClass.Instance.GB.CurrentUser.UserID, book);
+                    await App.Current.MainPage.DisplayAlert("Thank You", "Book is returned", "OK");
+                }
+                catch (Exception ex)
+                { Console.WriteLine(ex.Message); }
+
+            }
+            else
+            {
+                await App.Current.MainPage.DisplayAlert("Warning", "You do not have this book", "OK");
+            }
         }
 
         public async void InitCancel()
