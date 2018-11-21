@@ -25,7 +25,8 @@ namespace TestApp
         {
             List<Book> list = new List<Book>();
             var WebSC = RefClass.Instance.RC;
-            list = await WebSC.GetABAsync();
+            list = await WebSC.GetABReadAsync();
+            RefClass.Instance.GB.allBooks = list;
             foreach (Book book in list)
             { 
                 var TS = new TableSection(book.BookName);

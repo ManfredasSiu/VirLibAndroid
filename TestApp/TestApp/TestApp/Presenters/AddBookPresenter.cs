@@ -53,6 +53,7 @@ namespace TestApp
             try
             {
                 await WebSC.AddBookAsync(book);
+                await App.Current.MainPage.DisplayAlert("Congratulations", "Book is added", "OK");
             }
             catch (Exception ex){ Console.WriteLine(ex.Message); }
             
