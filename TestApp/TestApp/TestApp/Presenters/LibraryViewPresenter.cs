@@ -25,7 +25,8 @@ namespace TestApp
         {
             List<Book> list = new List<Book>();
             var WebSC = RefClass.Instance.RC;
-            list = await WebSC.GetABReadAsync();
+            list = await WebSC.GetABAsync();
+            LV.DataBookss.Root.Clear();
             RefClass.Instance.GB.allBooks = list;
             foreach (Book book in list)
             { 

@@ -20,8 +20,13 @@ namespace TestApp
         public async void Ret_Init()
         {
             String barcode = RB.codeTXT;
+            if (barcode == null || barcode.Replace(" ", "") == "")
+            {
+                await App.Current.MainPage.DisplayAlert("Exception", "The barcode field is empty", "OK");
+                return;
+            }
             Book book = RefClass.Instance.GB.CurrentUser.UserBooks.Find(x => x.BookCode == barcode);
-            if (book.BookCode == barcode) //NES JEI NERA LYGU, REISKIAS FIND NERADO TOKIOS KNYGOS.LOGISKA?
+            if (book != null)//(book.BookCode == barcode) //NES JEI NERA LYGU, REISKIAS FIND NERADO TOKIOS KNYGOS.LOGISKA? -- NELABAI .- Manfredas
             {
                 var WebSC = RefClass.Instance.RC;
                 try

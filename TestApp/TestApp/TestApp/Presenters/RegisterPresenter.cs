@@ -30,15 +30,17 @@ namespace TestApp
 
         public async void CreateUser(String name, String password, String email)
         {
+            UserDialogs.Instance.ShowLoading("Checking data", MaskType.Black);
             int check = await CheckTheEntries(R.nameTxt, R.PassTxt, R.EmailTxt);
             
             if (check != 0)
             {
                 WrongInput?.Invoke(this, new WrongInputEventArgs { ErrorCode = check });
+                UserDialogs.Instance.HideLoading();
                 return;
             }
-            
-            
+            UserDialogs.Instance.HideLoading();
+
             await CrossMedia.Current.Initialize();
             if (await CrossPermissions.Current.ShouldShowRequestPermissionRationaleAsync(Permission.Storage))
                 await App.Current.MainPage.DisplayAlert("Permissions", "Storage Permission Needed", "OK");
@@ -116,7 +118,7 @@ namespace TestApp
 
         public async Task<int> CheckTheEntries(string name, string password, string email) //Security blokai Entry atzvilgiu
         {
-
+            
             var noSpecials = new System.Text.RegularExpressions.Regex("^[a-zA-Z0-9 ]*$"); // {2 ,} Matches the previous element at least 2 times.
             var correctEmail = new System.Text.RegularExpressions.Regex("^[_a-z0-9-]+(.[a-z0-9-]+)@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$");
             if (name == null|| name.Replace(" ", "") == "" )
@@ -139,7 +141,7 @@ namespace TestApp
             {
                 return 6;
             }
-            if (await WebSC.searchUserAsync(R.nameTxt) == 0)
+            if (await WebSC.searchUserAsync(R.nameTxt) != 0)
             {
                 return 7;
             }
