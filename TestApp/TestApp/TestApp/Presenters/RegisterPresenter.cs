@@ -86,7 +86,7 @@ namespace TestApp
                                 {
                                     var WebSC = RefClass.Instance.RC;
                                     await WebSC.AddUserAsync(R.nameTxt, R.PassTxt, R.EmailTxt);
-                                    await App.Current.MainPage.DisplayAlert("User Registered", "" + username, "OK");
+                                    await App.Current.MainPage.DisplayAlert("User Registered", "Success" , "OK");
                                     await Application.Current.MainPage.Navigation.PopAsync();
                                     
                                 }
