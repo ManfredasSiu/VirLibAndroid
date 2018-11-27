@@ -1,4 +1,7 @@
-﻿ using System;
+﻿using Plugin.Permissions;
+using Plugin.Permissions.Abstractions;
+using Plugin.SpeechRecognition;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using Xamarin.Forms;
@@ -36,7 +39,7 @@ namespace TestApp
             RefClass.Instance.GB.CurrentUser.BooksRead = await RefClass.Instance.RC.GetBooksReadAsync(RefClass.Instance.GB.CurrentUser.UserID);
         }
 
-        public void StatsInit()
+        public void StatsInitAsync()
         {
             RefClass.Instance.InitStatistics();
         }

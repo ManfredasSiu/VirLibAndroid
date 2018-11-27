@@ -35,6 +35,8 @@ namespace TestApp
 
         public IRest RC = new RestClient();
 
+        private VoiceRecognition VR = new VoiceRecognition();
+
         public ICallAzureAPI CAA = new FaceApiCalls();
 
         //UI
