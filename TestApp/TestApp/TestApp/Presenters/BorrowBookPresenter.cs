@@ -1,14 +1,17 @@
-﻿using Plugin.Media;
+﻿using Android.Content.Res;
+using Plugin.Media;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using Xamarin.Forms;
+using ZXing.Net.Mobile.Forms;
+
 
 namespace TestApp
 {
     class BorrowBookPresenter
     {
-
+        ZXingScannerPage scanPage;
         IBorrowBview BB;
         public BorrowBookPresenter(IBorrowBview BB)
         {
@@ -52,13 +55,19 @@ namespace TestApp
 
         public async System.Threading.Tasks.Task ScanAsync()
         {
-            await CrossMedia.Current.Initialize();
-            var file = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
-            {
-            });
+            scanPage = new ZXingScannerPage();
+            scanPage.OnScanResult += (result) => {
+                scanPage.IsScanning = false;
 
-            //Barcode scanner
+                //Pavaizduoja nuskenuotą barkodą
+                Device.BeginInvokeOnMainThread(() => {
+                    Application.Current.MainPage.Navigation.PopAsync();
+                    Application.Current.MainPage.DisplayAlert("Scanned Barcode", result.Text, "OK");
+                });
+                //
+            };
 
+            await Application.Current.MainPage.Navigation.PushAsync(scanPage);
         }
     }
 }

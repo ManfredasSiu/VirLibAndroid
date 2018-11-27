@@ -26,6 +26,7 @@ namespace TestApp.Droid
             CrossMedia.Current.Initialize();
             UserDialogs.Init(this);
             base.OnCreate(savedInstanceState);
+            ZXing.Net.Mobile.Forms.Android.Platform.Init();
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             LoadApplication(new App());
         }
