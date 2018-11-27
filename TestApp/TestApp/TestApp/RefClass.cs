@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using TestApp.Connection;
+﻿using TestApp.Connection;
 using TestApp.Data;
 using VirtualLibrary;
 using Xamarin.Forms;
+
 namespace TestApp
 {
     class RefClass
@@ -40,32 +38,54 @@ namespace TestApp
         public ICallAzureAPI CAA = new FaceApiCalls();
 
         //UI
+        object padlock2 = new object();
 
         public void InitRegister()
         {
-            Application.Current.MainPage.Navigation.PushAsync(new Register());
+            lock (padlock)
+            {
+                Application.Current.MainPage.Navigation.PushAsync(new Register());
+            }
         }
 
         public void InitMain()
         {
-            Application.Current.MainPage = new NavigationPage(new MainWindow());
+            lock (padlock)
+            {
+                Application.Current.MainPage = new NavigationPage(new MainWindow());
+            }
         }
 
         public void InitStatistics()
         {
-            Application.Current.MainPage.Navigation.PushAsync(new StatsView());
+            lock (padlock)
+            {
+                Application.Current.MainPage.Navigation.PushAsync(new StatsView());
+            }
         }
+
         public void InitMyBooks()
         {
-            Application.Current.MainPage.Navigation.PushAsync(new MyBooksView());
+            lock (padlock)
+            {
+                Application.Current.MainPage.Navigation.PushAsync(new MyBooksView());
+            }
         }
+
         public void InitLibrary()
         {
-            Application.Current.MainPage.Navigation.PushAsync(new LibraryView());
+            lock (padlock)
+            {
+                Application.Current.MainPage.Navigation.PushAsync(new LibraryView());
+            }
         }
+
         public void InitRecomended()
         {
-            Application.Current.MainPage.Navigation.PushAsync(new Recommended());
+            lock (padlock)
+            {
+                Application.Current.MainPage.Navigation.PushAsync(new Recommended());
+            }
         }
     }
 }
