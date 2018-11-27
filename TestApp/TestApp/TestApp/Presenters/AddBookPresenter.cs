@@ -19,13 +19,14 @@ namespace TestApp
 
         public async System.Threading.Tasks.Task ScanAsync()
         {
-            await CrossMedia.Current.Initialize();
-            var file = await CrossMedia.Current.TakePhotoAsync(new Plugin.Media.Abstractions.StoreCameraMediaOptions
-            {
-                Directory = "Barcode",
-                Name = "code"
-            });
-            File.Delete(file.Path);
+            Scanner scn = new Scanner();
+            scn.Scanned += ScannedCode;
+            await scn.Scan();
+        }
+
+        private void ScannedCode(object sender, ScannedEventArgs e)
+        {
+            string code = e.Barcode;
         }
 
         public async void InitCancel()

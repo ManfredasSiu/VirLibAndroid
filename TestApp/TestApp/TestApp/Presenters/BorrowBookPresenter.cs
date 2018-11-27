@@ -4,15 +4,14 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using Xamarin.Forms;
-using ZXing.Net.Mobile.Forms;
 
 
 namespace TestApp
 {
     class BorrowBookPresenter
     {
-        ZXingScannerPage scanPage;
         IBorrowBview BB;
+
         public BorrowBookPresenter(IBorrowBview BB)
         {
             this.BB = BB;
@@ -55,19 +54,15 @@ namespace TestApp
 
         public async System.Threading.Tasks.Task ScanAsync()
         {
-            scanPage = new ZXingScannerPage();
-            scanPage.OnScanResult += (result) => {
-                scanPage.IsScanning = false;
+            Scanner scn = new Scanner();
+            scn.Scanned += ScannedCode;
+            await scn.Scan();
+        }
 
-                //Pavaizduoja nuskenuotą barkodą
-                Device.BeginInvokeOnMainThread(() => {
-                    Application.Current.MainPage.Navigation.PopAsync();
-                    Application.Current.MainPage.DisplayAlert("Scanned Barcode", result.Text, "OK");
-                });
-                //
-            };
-
-            await Application.Current.MainPage.Navigation.PushAsync(scanPage);
+        private void ScannedCode(object sender, ScannedEventArgs e)
+        {
+            string code = e.Barcode;
         }
     }
 }
+
