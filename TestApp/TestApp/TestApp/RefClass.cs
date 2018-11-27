@@ -37,33 +37,69 @@ namespace TestApp
 
         public ICallAzureAPI CAA = new FaceApiCalls();
 
+        private IRegisterView Reg;
+        private IMainWindowView MWV;
+        private StatsView SW;
+        private IMyBooksView MBV;
+        private ILibraryView LV;
+        private Recommended R;
+
         //UI
+        private static readonly object ResLock = new object();
 
         public void InitRegister()
         {
-            Application.Current.MainPage.Navigation.PushAsync(new Register());
+            lock (ResLock)
+            {
+                Reg = new Register();
+                Application.Current.MainPage.Navigation.PushAsync((Page)Reg);
+
+            }
         }
 
         public void InitMain()
         {
-            Application.Current.MainPage = new NavigationPage(new MainWindow());
+            lock (ResLock)
+            {
+                MWV = new MainWindow();
+                Application.Current.MainPage.Navigation.PushAsync((Page)MWV);
+            }
         }
 
         public void InitStatistics()
         {
-            Application.Current.MainPage.Navigation.PushAsync(new StatsView());
+            lock (ResLock)
+            {
+                SW = new StatsView();
+                Application.Current.MainPage.Navigation.PushAsync(SW);
+            }
         }
+
         public void InitMyBooks()
         {
-            Application.Current.MainPage.Navigation.PushAsync(new MyBooksView());
+            lock (ResLock)
+            {
+                MBV = new MyBooksView();
+                Application.Current.MainPage.Navigation.PushAsync((Page)MBV);                
+            }
         }
+
         public void InitLibrary()
         {
-            Application.Current.MainPage.Navigation.PushAsync(new LibraryView());
+            lock (ResLock)
+            {
+                LV = new LibraryView();
+                Application.Current.MainPage.Navigation.PushAsync((Page)LV);
+            }
         }
+
         public void InitRecomended()
         {
-            Application.Current.MainPage.Navigation.PushAsync(new Recommended());
+            lock (ResLock)
+            {
+                    R = new Recommended();
+                    Application.Current.MainPage.Navigation.PushAsync(R);
+            }
         }
     }
 }
