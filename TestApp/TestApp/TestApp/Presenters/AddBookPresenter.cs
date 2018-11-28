@@ -35,8 +35,8 @@ namespace TestApp
 
         public async void InitAdd()
         {
-            // metodas kuris kreipiasi i CheckTBs ir prideda knyga i duombaze
-            //pasiimu reiksmes is lauku ir dedu i book ir pridedu prie all books
+            if ((CheckTBs(AB.nameTXT, AB.authTXT, AB.pressnameTXT, AB.pagesTXT, AB.genreTXT, AB.quantityTXT, AB.codeTXT) != 0))
+                return;
 
             Book book = new Book()
             {

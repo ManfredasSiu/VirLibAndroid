@@ -13,13 +13,13 @@ namespace TestApp
         {
             this.MBV = MBV;
             LoadBooks();
-            RefClass.Instance.RC.DataAdded += UpdateTable;
+            RefClass.Instance.RC.DataAdded += (Object sender, EventArgs e) => LoadBooks();
         }
 
-        public void UpdateTable(Object sender, EventArgs e)
+        /*public void UpdateTable(Object sender, EventArgs e)
         {
             LoadBooks();
-        }
+        }*/
 
         public async void LoadBooks()
         {

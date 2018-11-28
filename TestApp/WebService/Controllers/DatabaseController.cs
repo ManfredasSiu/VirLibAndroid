@@ -80,7 +80,7 @@ namespace WebService.Controllers
         }
     }
     
-    public class DatabaseController : ApiController
+    public class DatabaseController : ApiController, IDatabaseController
     {
 
         DataClasses1DataContext db = new DataClasses1DataContext();
