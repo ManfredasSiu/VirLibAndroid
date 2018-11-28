@@ -12,17 +12,10 @@ namespace TestApp
         public LibraryViewPresenter(ILibraryView LV)
         {
             this.LV = LV;
-            RefClass.Instance.RC.DataAdded += (System.Object o, System.EventArgs e) =>
-            {
-                LoadLibrary();
-            };
+            RefClass.Instance.RC.DataAdded += (Object sender, EventArgs e) => { LoadLibrary(); } ;
             LoadLibrary();
         }
-
-/*private void Eventhandler(Object sender, EventArgs e)
-        {
-            LoadLibrary();
-        }*/
+        
 
         private async void LoadLibrary()
         {

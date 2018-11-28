@@ -13,14 +13,9 @@ namespace TestApp
         {
             this.MBV = MBV;
             LoadBooks();
-            RefClass.Instance.RC.DataAdded += (Object sender, EventArgs e) => LoadBooks();
+            RefClass.Instance.RC.DataAdded += (Object sender, EventArgs e) => { LoadBooks(); };
         }
-
-        /*public void UpdateTable(Object sender, EventArgs e)
-        {
-            LoadBooks();
-        }*/
-
+        
         public async void LoadBooks()
         {
             List<Book> list = new List<Book>();
