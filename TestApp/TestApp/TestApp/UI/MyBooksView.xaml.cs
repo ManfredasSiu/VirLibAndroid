@@ -14,6 +14,7 @@ namespace TestApp
 	{
         MyBooksViewPresenter MBVP;
         public TableView YourBookss => YourBooks;
+        public string codeTXT => code.Text;
 
         public MyBooksView()
         {
@@ -30,6 +31,11 @@ namespace TestApp
         private void Cancel_Button(object sender, EventArgs e)
         {
             MBVP.InitCancel();
+        }
+
+        private void MoreInfo_Button(object sender, EventArgs e)
+        {
+            MBVP.InitMore();
         }
     }
 }

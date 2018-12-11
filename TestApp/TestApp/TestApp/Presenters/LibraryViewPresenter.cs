@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using TestApp.UI;
 using Xamarin.Forms;
 
 namespace TestApp
@@ -25,10 +26,8 @@ namespace TestApp
             RefClass.Instance.GB.allBooks = list;
             foreach (Book book in list)
             { 
-                var TS = new TableSection(book.BookName);
-                TS.Add(new TextCell() { Text = book.BookAuthor });
-                TS.Add(new TextCell() { Text = book.BookGenre });
-                TS.Add(new TextCell() { Text = book.BookCode });
+                var TS = new TableSection("Code: " + book.BookCode);
+                TS.Add(new TextCell() { Text = "Book name: " + book.BookName});
                 LV.DataBookss.Root.Add(TS);
             }
         }
@@ -42,5 +41,13 @@ namespace TestApp
         {
             Application.Current.MainPage.Navigation.PushAsync(new BorrowBook());
         }
+
+        public void MoreInit()
+        {
+            RefClass.Instance.GB.CurrentBookCode = LV.codeTXT;
+            Application.Current.MainPage.Navigation.PushAsync(new MoreInfo());
+        }
+
+
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using TestApp.UI;
 using Xamarin.Forms;
 
 namespace TestApp
@@ -8,15 +9,20 @@ namespace TestApp
     class MyBooksViewPresenter
     {
         IMyBooksView MBV;
-
+        
         public MyBooksViewPresenter(IMyBooksView MBV)
         {
             this.MBV = MBV;
+               
             LoadBooks();
         }
 
         public async void LoadBooks()
         {
+            List<Book> list1 = new List<Book>();
+            var WebSC1 = RefClass.Instance.RC;
+            list1 = await WebSC1.GetABReadAsync();
+            RefClass.Instance.GB.allBooks = list1;
 
             List<Book> list = new List<Book>();
             var WebSC = RefClass.Instance.RC;
@@ -24,12 +30,12 @@ namespace TestApp
             RefClass.Instance.GB.CurrentUser.UserBooks = list;
             foreach (Book book in list)
             {
-                var TS = new TableSection(book.BookName);
-                TS.Add(new TextCell() { Text = book.BookAuthor });
-                TS.Add(new TextCell() { Text = book.BookGenre });
-                TS.Add(new TextCell() { Text = book.BookCode });
+              
+                var TS = new TableSection("Code: "+book.BookCode);
+                TS.Add(new TextCell() {Text = "Book name: " + book.BookName});
                 MBV.YourBookss.Root.Add(TS);
             }
+            
         }
 
         public void ReturnInit()
@@ -40,6 +46,12 @@ namespace TestApp
         public void InitCancel()
         {
             Application.Current.MainPage.Navigation.PopAsync();
+        }
+
+        public void InitMore()
+        {
+            RefClass.Instance.GB.CurrentBookCode = MBV.codeTXT;
+            Application.Current.MainPage.Navigation.PushAsync(new MoreInfo());
         }
 
     }
