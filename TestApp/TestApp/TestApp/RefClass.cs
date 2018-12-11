@@ -37,6 +37,14 @@ namespace TestApp
 
         public ICallAzureAPI CAA = new FaceApiCalls();
 
+        public Statistics CreateStatistics()
+        {
+            Statistics ST = new Statistics();
+            return ST;
+        }
+
+        
+
         //UI
         object padlock2 = new object();
 

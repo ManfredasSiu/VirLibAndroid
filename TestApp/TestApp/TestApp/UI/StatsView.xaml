@@ -22,7 +22,7 @@
 			</Grid.ColumnDefinitions>
 
 			<Label Text="Personal statistics" FontSize="36" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Row="0"></Label>
-			<Label Text="Horror Statistics" FontSize="22" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Row="1"></Label>
+            <Label Text="Horror Statistics" FontSize="22" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Row="1"></Label>
 
 			<Grid Grid.Row="2" HeightRequest="100">
 				<Grid.RowDefinitions>
@@ -33,8 +33,8 @@
 					<ColumnDefinition Width="*"></ColumnDefinition>
 				</Grid.ColumnDefinitions>
 
-				<Label Text="Books Read: " FontSize="14" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Row="0" Grid.Column="0"></Label>
-				<Label Text="Pages Read: " FontSize="14" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Row="0" Grid.Column="1"></Label>
+                <Label x:Name="HorrorBooks" Text="Books Read: " FontSize="14" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Row="0" Grid.Column="0"></Label>
+                <Label x:Name="HorrorPages" Text="Pages Read: " FontSize="14" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Row="0" Grid.Column="1"></Label>
 			</Grid>
 
 			<Label Text="Comedy Statistics" FontSize="22" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Row="3"></Label>
@@ -48,8 +48,8 @@
 					<ColumnDefinition Width="*"></ColumnDefinition>
 				</Grid.ColumnDefinitions>
 
-				<Label Text="Books Read: " FontSize="14" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Row="0" Grid.Column="0"></Label>
-				<Label Text="Pages Read: " FontSize="14" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Row="0" Grid.Column="1"></Label>
+                <Label x:Name="ComedyBooks" Text="Books Read: " FontSize="14" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Row="0" Grid.Column="0"></Label>
+                <Label x:Name="ComedyPages" Text="Pages Read: " FontSize="14" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Row="0" Grid.Column="1"></Label>
 			</Grid>
 
 			<Label Text="Crime Statistics" FontSize="22" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Row="5"></Label>
@@ -63,8 +63,8 @@
 					<ColumnDefinition Width="*"></ColumnDefinition>
 				</Grid.ColumnDefinitions>
 
-				<Label Text="Books Read: " FontSize="14" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Row="0" Grid.Column="0"></Label>
-				<Label Text="Pages Read: " FontSize="14" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Row="0" Grid.Column="1"></Label>
+                <Label x:Name="CrimeBooks" Text="Books Read: " FontSize="14" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Row="0" Grid.Column="0"></Label>
+                <Label x:Name="CrimePages" Text="Pages Read: " FontSize="14" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Row="0" Grid.Column="1"></Label>
 			</Grid>
 
 			<Label Text="Documentary Statistics" FontSize="22" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Row="7"></Label>
@@ -78,8 +78,8 @@
 					<ColumnDefinition Width="*"></ColumnDefinition>
 				</Grid.ColumnDefinitions>
 
-				<Label Text="Books Read: " FontSize="14" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Row="0" Grid.Column="0"></Label>
-				<Label Text="Pages Read: " FontSize="14" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Row="0" Grid.Column="1"></Label>
+                <Label x:Name="DocBooks" Text="Books Read: " FontSize="14" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Row="0" Grid.Column="0"></Label>
+                <Label x:Name="DocPages" Text="Pages Read: " FontSize="14" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Row="0" Grid.Column="1"></Label>
 			</Grid>
 
 			<Label Text="Overall Statistics" FontSize="22" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Row="9"></Label>
@@ -94,10 +94,10 @@
 					<ColumnDefinition Width="*"></ColumnDefinition>
 				</Grid.ColumnDefinitions>
 
-				<Label Text="Books Read: " FontSize="14" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Row="0" Grid.Column="0"></Label>
-				<Label Text="Pages Read: " FontSize="14" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Row="0" Grid.Column="1"></Label>
-				<Label Text="Average Pages: " FontSize="14" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Row="1" Grid.Column="0"></Label>
-				<Label Text="Biggest Book Read: " FontSize="14" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Row="1" Grid.Column="1"></Label>
+                <Label x:Name="OverallBooks" Text="Books Read: " FontSize="14" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Row="0" Grid.Column="0"></Label>
+                <Label x:Name="OverallPages" Text="Pages Read: " FontSize="14" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Row="0" Grid.Column="1"></Label>
+                <Label x:Name="OverallAvg" Text="Average Pages: " FontSize="14" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Row="1" Grid.Column="0"></Label>
+                <Label x:Name="OverallBig" Text="Biggest Book Read: " FontSize="14" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Row="1" Grid.Column="1"></Label>
 
 			</Grid>
 		</Grid>
