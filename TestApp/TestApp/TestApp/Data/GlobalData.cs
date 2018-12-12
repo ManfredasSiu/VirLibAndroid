@@ -6,7 +6,9 @@ namespace TestApp.Data
 {
     public class GlobalData
     {
+
         public UserData CurrentUser;
-        public List<Book> allBooks = new List<Book>(); 
+        public List<Book> allBooks = new List<Book>();
+        public string CurrentBookCode;
     }
 }

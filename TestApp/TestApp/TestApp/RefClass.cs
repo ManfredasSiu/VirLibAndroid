@@ -47,52 +47,68 @@ namespace TestApp
 
         //UI
         object padlock2 = new object();
+        
+        private IRegisterView Reg;
+        private IMainWindowView MWV;
+        private StatsView SW;
+        private IMyBooksView MBV;
+        private ILibraryView LV;
+        private Recommended R;
+
+        //UI
+        private static readonly object ResLock = new object();
 
         public void InitRegister()
         {
-            lock (padlock)
+            lock (ResLock)
             {
-                Application.Current.MainPage.Navigation.PushAsync(new Register());
+                Reg = new Register();
+                Application.Current.MainPage.Navigation.PushAsync((Page)Reg);
             }
         }
 
         public void InitMain()
         {
-            lock (padlock)
+            lock (ResLock)
             {
-                Application.Current.MainPage = new NavigationPage(new MainWindow());
+                MWV = new MainWindow();
+                Application.Current.MainPage.Navigation.PushAsync((Page)MWV);
             }
         }
 
         public void InitStatistics()
         {
-            lock (padlock)
+            lock (ResLock)
             {
-                Application.Current.MainPage.Navigation.PushAsync(new StatsView());
+                SW = new StatsView();
+                Application.Current.MainPage.Navigation.PushAsync(SW);
             }
         }
 
         public void InitMyBooks()
         {
-            lock (padlock)
+            lock (ResLock)
             {
-                Application.Current.MainPage.Navigation.PushAsync(new MyBooksView());
+                MBV = new MyBooksView();
+                Application.Current.MainPage.Navigation.PushAsync((Page)MBV);
             }
         }
 
         public void InitLibrary()
         {
-            lock (padlock)
+            lock (ResLock)
             {
-                Application.Current.MainPage.Navigation.PushAsync(new LibraryView());
+                LV = new LibraryView();
+                Application.Current.MainPage.Navigation.PushAsync((Page)LV);
             }
         }
 
         public void InitRecomended()
         {
-            lock (padlock)
+            lock (ResLock)
             {
-                Application.Current.MainPage.Navigation.PushAsync(new Recommended());
+                    R = new Recommended();
+                    Application.Current.MainPage.Navigation.PushAsync(R);
             }
         }
     }

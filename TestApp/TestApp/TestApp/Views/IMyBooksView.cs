@@ -7,6 +7,7 @@ namespace TestApp
 {
     interface IMyBooksView
     {
+        String codeTXT { get; }
         TableView YourBookss { get; }
     }
 }

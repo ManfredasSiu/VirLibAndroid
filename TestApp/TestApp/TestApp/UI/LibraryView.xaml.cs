@@ -17,8 +17,9 @@ namespace TestApp
         LibraryViewPresenter LVP;
 
         public TableView DataBookss => DataBooks;
+        public string codeTXT => code.Text;
 
-        
+
 
         public LibraryView()
         {
@@ -36,6 +37,10 @@ namespace TestApp
         private void BorrowBook_Button(object sender, EventArgs e)
         {
             LVP.BorrowInit();
+        }
+        private void MoreInfo_Button(object sender, EventArgs e)
+        {
+            LVP.MoreInit();
         }
     }
 }
