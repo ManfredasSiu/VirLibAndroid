@@ -33,6 +33,8 @@ namespace TestApp.Presenters
             SW.DocPagesTxt = ST.PagesReadD.ToString();
             SW.ComedyBookTxt = ST.BooksReadCo.ToString();
             SW.ComedyPagesTxt = ST.PagesReadCo.ToString();
+            SW.BigBookTxt = ST.BiggestBook.BookName;
+            SW.AvgPagesTxt = ST.PagesPerBook.ToString();
         }
 
     }
