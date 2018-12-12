@@ -1,0 +1,10 @@
+E:\Studies\UNI\Uni 3 semestras\VirLibAndroid\TestApp\DatabaseFirstEntityFramework\bin\Debug\DatabaseFirstEntityFramework.exe.config
+E:\Studies\UNI\Uni 3 semestras\VirLibAndroid\TestApp\DatabaseFirstEntityFramework\bin\Debug\DatabaseFirstEntityFramework.exe
+E:\Studies\UNI\Uni 3 semestras\VirLibAndroid\TestApp\DatabaseFirstEntityFramework\bin\Debug\DatabaseFirstEntityFramework.pdb
+E:\Studies\UNI\Uni 3 semestras\VirLibAndroid\TestApp\DatabaseFirstEntityFramework\bin\Debug\EntityFramework.dll
+E:\Studies\UNI\Uni 3 semestras\VirLibAndroid\TestApp\DatabaseFirstEntityFramework\bin\Debug\EntityFramework.xml
+E:\Studies\UNI\Uni 3 semestras\VirLibAndroid\TestApp\DatabaseFirstEntityFramework\obj\Debug\DatabaseFirstEntityFramework.csprojAssemblyReference.cache
+E:\Studies\UNI\Uni 3 semestras\VirLibAndroid\TestApp\DatabaseFirstEntityFramework\obj\Debug\DatabaseFirstEntityFramework.csproj.CoreCompileInputs.cache
+E:\Studies\UNI\Uni 3 semestras\VirLibAndroid\TestApp\DatabaseFirstEntityFramework\obj\Debug\DatabaseFirstEntityFramework.csproj.CopyComplete
+E:\Studies\UNI\Uni 3 semestras\VirLibAndroid\TestApp\DatabaseFirstEntityFramework\obj\Debug\DatabaseFirstEntityFramework.exe
+E:\Studies\UNI\Uni 3 semestras\VirLibAndroid\TestApp\DatabaseFirstEntityFramework\obj\Debug\DatabaseFirstEntityFramework.pdb

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="fb85c0064efc49f8a049f66a599f6bdf" Name="Diagram1">
+        <EntityTypeShape EntityType="VirtualLibModel.Book" Width="1.5" PointX="0.75" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualLibModel.BooksRead" Width="1.5" PointX="3" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualLibModel.User" Width="1.5" PointX="0.75" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualLibModel.UserBook" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="VirtualLibModel.BookID" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualLibModel.BookRead" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualLibModel.Reader" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualLibModel.UserID" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
