@@ -5,9 +5,8 @@ using Xamarin.Forms;
 
 namespace TestApp
 {
-    interface ILibraryView
+    interface IMoreInfoView
     {
-        String codeTXT { get; }
-        TableView DataBookss { get; }
+        TableView Info_book { get; }
     }
 }
