@@ -4,7 +4,6 @@
              x:Class="TestApp.LibraryView">
     <ContentPage.Content>
     <StackLayout>
-            <Grid Margin="10" Grid.Row="1" HeightRequest="40">
 			<Grid>
 				<Grid.RowDefinitions>
 					<RowDefinition Height="AUTO"></RowDefinition>

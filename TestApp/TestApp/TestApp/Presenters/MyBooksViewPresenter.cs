@@ -22,7 +22,7 @@ namespace TestApp
         {
             List<Book> list1 = new List<Book>();
             var WebSC = RefClass.Instance.RC;
-            list1 = await WebSC.GetABReadAsync();
+            list1 = await WebSC.GetABAsync();
             RefClass.Instance.GB.allBooks = list1;
             List<Book> list = new List<Book>();
             list = await WebSC.GetUserBooksAsync(RefClass.Instance.GB.CurrentUser.UserID);
