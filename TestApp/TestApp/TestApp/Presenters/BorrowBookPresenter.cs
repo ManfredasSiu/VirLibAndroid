@@ -11,6 +11,7 @@ namespace TestApp
     class BorrowBookPresenter
     {
         IBorrowBview BB;
+        String code = null;
 
         public BorrowBookPresenter(IBorrowBview BB)
         {
@@ -21,6 +22,7 @@ namespace TestApp
         public async void InitBor()
         {
             String barcode = BB.codeTXT;
+            if (code != null) barcode = code; 
             if(barcode == null || barcode.Replace(" ", "") == "")
             {
                 await App.Current.MainPage.DisplayAlert("Exception", "The barcode field is empty", "OK");
@@ -61,7 +63,7 @@ namespace TestApp
 
         private void ScannedCode(object sender, ScannedEventArgs e)
         {
-            string code = e.Barcode;
+            code = e.Barcode;
         }
     }
 }
