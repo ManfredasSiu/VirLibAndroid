@@ -13,7 +13,7 @@ namespace DatabaseFirstEntityFramework
             using (var db = new VirtualLibEntities())
             {
                 // Create and save a new Book
-                Console.Write("Enter the name for a new Book: ");
+                /*Console.Write("Enter the name for a new Book: ");
                 var name = Console.ReadLine();
                 Console.Write("Enter the id for a new Book: ");
                 var id = int.Parse(Console.ReadLine());
@@ -28,7 +28,12 @@ namespace DatabaseFirstEntityFramework
                 Console.Write("Enter the pages for a new Book: ");
                 var pages = int.Parse(Console.ReadLine());
                 Console.Write("Enter the quantity for a new Book: ");
-                var quantity = int.Parse(Console.ReadLine());
+                var quantity = int.Parse(Console.ReadLine());*/
+
+                string name = "Knyga", author = "Autorius", press = "Leidykla", barcode = "1351860514650", genre = "Drama";
+                int id = 1015, pages = 180, quantity = 10;
+
+
 
                 var book = new Book { Name = name, Id = id, Author = author, Barcode = barcode, Genre = genre,  Pages = pages, Press = press, Quantity = quantity
                 };
