@@ -6,21 +6,41 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
+using TestApp.Connection;
 using VirtualLibrary;
 using Xamarin.Forms;
 
 namespace TestApp
 {
+
     class RegisterPresenter
     {
+        IRest WebSC;
         IRegisterView R;
+
+        public event EventHandler<WrongInputEventArgs> WrongInput; 
+
         public RegisterPresenter(IRegisterView R)
         {
             this.R = R;
+            WebSC = RefClass.Instance.RC;
         }
 
         public async void CreateUser(String name, String password, String email)
         {
+            UserDialogs.Instance.ShowLoading("Checking data", MaskType.Black);
+            int check = await CheckTheEntries(R.nameTxt, R.PassTxt, R.EmailTxt);
+            
+            if (check != 0)
+            {
+                WrongInput?.Invoke(this, new WrongInputEventArgs { ErrorCode = check });
+                UserDialogs.Instance.HideLoading();
+                return;
+            }
+            UserDialogs.Instance.HideLoading();
+
             await CrossMedia.Current.Initialize();
             if (await CrossPermissions.Current.ShouldShowRequestPermissionRationaleAsync(Permission.Storage))
                 await App.Current.MainPage.DisplayAlert("Permissions", "Storage Permission Needed", "OK");
@@ -65,14 +85,10 @@ namespace TestApp
                                 try
                                 {
                                     var WebSC = RefClass.Instance.RC;
-                                    if (await WebSC.searchUserAsync(R.nameTxt) == 0)
-                                    {
-                                        await WebSC.AddUserAsync(R.nameTxt, R.PassTxt, R.EmailTxt);
-                                        await App.Current.MainPage.DisplayAlert("User Registered", "" + username, "OK");
-                                        await Application.Current.MainPage.Navigation.PopAsync();
-                                    }
-                                    else
-                                        await App.Current.MainPage.DisplayAlert("Exception", "Oops, try again", "OK");
+                                    await WebSC.AddUserAsync(R.nameTxt, R.PassTxt, R.EmailTxt);
+                                    await App.Current.MainPage.DisplayAlert("User Registered", "Success" , "OK");
+                                    await Application.Current.MainPage.Navigation.PopAsync();
+                                    
                                 }
                                 catch
                                 {
@@ -98,6 +114,38 @@ namespace TestApp
                 return;
             }
             await Application.Current.MainPage.Navigation.PopAsync();
+        }
+
+        public async Task<int> CheckTheEntries(string name, string password, string email) //Security blokai Entry atzvilgiu
+        {
+            
+            var noSpecials = new System.Text.RegularExpressions.Regex("^[a-zA-Z0-9 ]*$"); // {2 ,} Matches the previous element at least 2 times.
+            var correctEmail = new System.Text.RegularExpressions.Regex("^[_a-z0-9-]+(.[a-z0-9-]+)@[a-z0-9-]+(.[a-z0-9-]+)*(.[a-z]{2,4})$");
+            if (name == null|| name.Replace(" ", "") == "" )
+            {
+                return 1;
+            }
+            else if (password == null|| password.Replace(" ", "") == "" )
+            {
+                return 2;
+            }
+            else if ( email == null||email.Replace(" ", "") == "" )
+            {
+                return 3;
+            }
+            else if (!noSpecials.IsMatch(name))
+            {
+                return 4;
+            }
+            else if (!correctEmail.IsMatch(email))
+            {
+                return 6;
+            }
+            if (await WebSC.searchUserAsync(R.nameTxt) != 0)
+            {
+                return 7;
+            }
+            return 0;
         }
     }
 }

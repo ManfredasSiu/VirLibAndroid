@@ -19,12 +19,16 @@ namespace TestApp
         public async void InitBor()
         {
             String barcode = BB.codeTXT;
+            if(barcode == null || barcode.Replace(" ", "") == "")
+            {
+                await App.Current.MainPage.DisplayAlert("Exception", "The barcode field is empty", "OK");
+                return;
+            }
             Book book = RefClass.Instance.GB.allBooks.Find(x => x.BookCode == barcode);
             Book arne = RefClass.Instance.GB.CurrentUser.UserBooks.Find(x => x.BookCode == barcode);
             
-            if (arne.BookCode != barcode && book != null)
+            if (arne == null && book != null)
             {
-                
                 var WebSC = RefClass.Instance.RC;
                 try
                 {

@@ -15,18 +15,18 @@ namespace TestApp
             this.MBV = MBV;
                
             LoadBooks();
+            RefClass.Instance.RC.DataAdded += (Object sender, EventArgs e) => { LoadBooks(); };
         }
-
+        
         public async void LoadBooks()
         {
             List<Book> list1 = new List<Book>();
-            var WebSC1 = RefClass.Instance.RC;
-            list1 = await WebSC1.GetABReadAsync();
-            RefClass.Instance.GB.allBooks = list1;
-
-            List<Book> list = new List<Book>();
             var WebSC = RefClass.Instance.RC;
+            list1 = await WebSC.GetABReadAsync();
+            RefClass.Instance.GB.allBooks = list1;
+            List<Book> list = new List<Book>();
             list = await WebSC.GetUserBooksAsync(RefClass.Instance.GB.CurrentUser.UserID);
+            MBV.YourBookss.Root.Clear();
             RefClass.Instance.GB.CurrentUser.UserBooks = list;
             foreach (Book book in list)
             {

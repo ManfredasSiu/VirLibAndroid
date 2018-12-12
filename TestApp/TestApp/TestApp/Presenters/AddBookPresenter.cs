@@ -1,4 +1,5 @@
-﻿using Plugin.Media;
+﻿using Acr.UserDialogs;
+using Plugin.Media;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -34,8 +35,8 @@ namespace TestApp
 
         public async void InitAdd()
         {
-            // metodas kuris kreipiasi i CheckTBs ir prideda knyga i duombaze
-            //pasiimu reiksmes is lauku ir dedu i book ir pridedu prie all books
+            if ((CheckTBs(AB.nameTXT, AB.authTXT, AB.pressnameTXT, AB.pagesTXT, AB.genreTXT, AB.quantityTXT, AB.codeTXT) != 0))
+                return;
 
             Book book = new Book()
             {
@@ -52,10 +53,12 @@ namespace TestApp
             var WebSC = RefClass.Instance.RC;
             try
             {
+                UserDialogs.Instance.ShowLoading("Checking data", MaskType.Black);
                 await WebSC.AddBookAsync(book);
                 await App.Current.MainPage.DisplayAlert("Congratulations", "Book is added", "OK");
+                UserDialogs.Instance.HideLoading();
             }
-            catch (Exception ex){ Console.WriteLine(ex.Message); }
+            catch (Exception ex){ Console.WriteLine(ex.Message); UserDialogs.Instance.HideLoading(); }
             
         }
         //tikrina ar add book lakai atitinka salygas ir knyga galima prideti
@@ -65,7 +68,7 @@ namespace TestApp
             var noSpecials = new System.Text.RegularExpressions.Regex("^[a-zA-Z0-9]*$"); //Regexas ivedimui be specealiu simboliu
             foreach (string tb in TBs)
             {
-                if (tb.Replace(" ", "") == "")
+                if (tb == null || tb.Replace(" ", "") == "")
                     return 1;
                 else if (!noSpecials.IsMatch(tb.Replace(" ", "")))
                     return 3;

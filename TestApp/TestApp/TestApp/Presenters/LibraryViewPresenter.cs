@@ -13,16 +13,17 @@ namespace TestApp
         public LibraryViewPresenter(ILibraryView LV)
         {
             this.LV = LV;
+            RefClass.Instance.RC.DataAdded += (Object sender, EventArgs e) => { LoadLibrary(); } ;
             LoadLibrary();
-
-            
         }
+        
 
         private async void LoadLibrary()
         {
             List<Book> list = new List<Book>();
             var WebSC = RefClass.Instance.RC;
-            list = await WebSC.GetABReadAsync();
+            list = await WebSC.GetABAsync();
+            LV.DataBookss.Root.Clear();
             RefClass.Instance.GB.allBooks = list;
             foreach (Book book in list)
             { 

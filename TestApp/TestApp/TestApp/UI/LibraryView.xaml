@@ -4,12 +4,21 @@
              x:Class="TestApp.LibraryView">
     <ContentPage.Content>
     <StackLayout>
-            
             <Grid Margin="10" Grid.Row="1" HeightRequest="40">
+			<Grid>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="AUTO"></RowDefinition>
+					<RowDefinition Height="*"></RowDefinition>
+					<RowDefinition Height="AUTO"></RowDefinition>
+				</Grid.RowDefinitions>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="*"></ColumnDefinition>
+				</Grid.ColumnDefinitions>
+            <Grid Margin="10" HeightRequest="30" Grid.Row="0">
                 <Label Text="All books" FontSize="20" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" Grid.Row="0" Grid.Column="0"></Label>
             </Grid>
 
-            <ScrollView Margin="10" Grid.Row="1" HeightRequest="430">
+				<ScrollView Margin="10" Grid.Row="1">
                 <Grid Margin="25">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="AUTO"></RowDefinition>
@@ -26,7 +35,7 @@
                 </Grid>
             </ScrollView>
 
-            <Grid Margin="10" RowSpacing="3">
+            <Grid Margin="10" RowSpacing="3" Grid.Row="2">
 
                 <Grid.RowDefinitions>
                     <RowDefinition Height="40"></RowDefinition>
@@ -40,6 +49,7 @@
                 <Button Clicked="BorrowBook_Button" Text="Borrow Book" Grid.Row="3" Grid.Column="0" BorderColor="Black" BorderWidth="3" CornerRadius="20" TextColor="Black" BackgroundColor="LightGray"></Button>
 
             </Grid>
-        </StackLayout>
+			</Grid>
+		</StackLayout>
     </ContentPage.Content>
 </ContentPage>

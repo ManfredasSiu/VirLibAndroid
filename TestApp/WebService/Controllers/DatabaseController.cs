@@ -80,7 +80,7 @@ namespace WebService.Controllers
         }
     }
     
-    public class DatabaseController : ApiController
+    public class DatabaseController : ApiController, IDatabaseController
     {
 
         DataClasses1DataContext db = new DataClasses1DataContext();
@@ -98,7 +98,7 @@ namespace WebService.Controllers
             return Json(userObj);
         }
         /// <inheritdoc/>
-        [HttpGet]
+        [HttpPost]
         [Route("api/book/add")]
         public IHttpActionResult AddBook([FromBody]BookInfo AddThis)
         {
@@ -296,7 +296,7 @@ namespace WebService.Controllers
         }
         /// <inheritdoc/>
         [HttpGet]
-        [Route("api/book/borrow/{UserID}/BookID")]
+        [Route("api/book/borrow/{UserID}/{BookID}")]
         public IHttpActionResult BorrowBook(int BookID, int UserID)
         {
             try
