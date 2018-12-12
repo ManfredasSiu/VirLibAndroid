@@ -26,7 +26,7 @@ namespace TestApp
 
         private void Stats_button(object sender, EventArgs e)
         {
-            MWP.StatsInit();
+            MWP.StatsInitAsync();
         }
 
         private void MBooks_button(object sender, EventArgs e)

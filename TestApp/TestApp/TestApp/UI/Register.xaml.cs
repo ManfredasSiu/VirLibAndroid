@@ -26,13 +26,7 @@ namespace TestApp
 		{
 			InitializeComponent ();
             RP = new RegisterPresenter(this);
-            try
-            {
-                RP.WrongInput += ShowMessage;
-            }catch(Exception e)
-            {
-                App.Current.MainPage.DisplayAlert("Exception", "Reopen Program", "OK");
-            }
+            RP.WrongInput += ShowMessage;
 		}
 
         public void Done_button(Object sender, EventArgs e)

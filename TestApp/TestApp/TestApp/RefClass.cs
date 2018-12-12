@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using TestApp.Connection;
+﻿using TestApp.Connection;
 using TestApp.Data;
 using VirtualLibrary;
 using Xamarin.Forms;
+
 namespace TestApp
 {
     class RefClass
@@ -35,8 +33,21 @@ namespace TestApp
 
         public IRest RC = new RestClient();
 
+        private VoiceRecognition VR = new VoiceRecognition();
+
         public ICallAzureAPI CAA = new FaceApiCalls();
 
+        public Statistics CreateStatistics()
+        {
+            Statistics ST = new Statistics();
+            return ST;
+        }
+
+        
+
+        //UI
+        object padlock2 = new object();
+        
         private IRegisterView Reg;
         private IMainWindowView MWV;
         private StatsView SW;
@@ -53,7 +64,6 @@ namespace TestApp
             {
                 Reg = new Register();
                 Application.Current.MainPage.Navigation.PushAsync((Page)Reg);
-
             }
         }
 
@@ -80,7 +90,7 @@ namespace TestApp
             lock (ResLock)
             {
                 MBV = new MyBooksView();
-                Application.Current.MainPage.Navigation.PushAsync((Page)MBV);                
+                Application.Current.MainPage.Navigation.PushAsync((Page)MBV);
             }
         }
 
