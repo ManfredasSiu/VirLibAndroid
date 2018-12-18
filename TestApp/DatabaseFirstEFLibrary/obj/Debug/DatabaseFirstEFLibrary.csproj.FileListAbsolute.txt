@@ -1,0 +1,12 @@
+E:\Studies\UNI\Uni 3 semestras\VirLibAndroid\TestApp\DatabaseFirstEFLibrary\bin\Debug\DatabaseFirstEFLibrary.exe.config
+E:\Studies\UNI\Uni 3 semestras\VirLibAndroid\TestApp\DatabaseFirstEFLibrary\bin\Debug\DatabaseFirstEFLibrary.exe
+E:\Studies\UNI\Uni 3 semestras\VirLibAndroid\TestApp\DatabaseFirstEFLibrary\bin\Debug\DatabaseFirstEFLibrary.pdb
+E:\Studies\UNI\Uni 3 semestras\VirLibAndroid\TestApp\DatabaseFirstEFLibrary\bin\Debug\EntityFramework.dll
+E:\Studies\UNI\Uni 3 semestras\VirLibAndroid\TestApp\DatabaseFirstEFLibrary\bin\Debug\EntityFramework.SqlServer.dll
+E:\Studies\UNI\Uni 3 semestras\VirLibAndroid\TestApp\DatabaseFirstEFLibrary\bin\Debug\EntityFramework.xml
+E:\Studies\UNI\Uni 3 semestras\VirLibAndroid\TestApp\DatabaseFirstEFLibrary\bin\Debug\EntityFramework.SqlServer.xml
+E:\Studies\UNI\Uni 3 semestras\VirLibAndroid\TestApp\DatabaseFirstEFLibrary\obj\Debug\DatabaseFirstEFLibrary.csprojAssemblyReference.cache
+E:\Studies\UNI\Uni 3 semestras\VirLibAndroid\TestApp\DatabaseFirstEFLibrary\obj\Debug\DatabaseFirstEFLibrary.csproj.CoreCompileInputs.cache
+E:\Studies\UNI\Uni 3 semestras\VirLibAndroid\TestApp\DatabaseFirstEFLibrary\obj\Debug\DatabaseFirstEFLibrary.csproj.CopyComplete
+E:\Studies\UNI\Uni 3 semestras\VirLibAndroid\TestApp\DatabaseFirstEFLibrary\obj\Debug\DatabaseFirstEFLibrary.exe
+E:\Studies\UNI\Uni 3 semestras\VirLibAndroid\TestApp\DatabaseFirstEFLibrary\obj\Debug\DatabaseFirstEFLibrary.pdb
