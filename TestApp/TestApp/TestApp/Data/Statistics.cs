@@ -37,10 +37,10 @@ namespace TestApp.Data
         public void Calculate(UserData CUser)
         {
             SortBooks(CUser);
-            SetThePreferences();
+            SetThePreferencesAsync();
         }
 
-        private void SetThePreferences()
+        private async System.Threading.Tasks.Task SetThePreferencesAsync()
         {
             if (PagesPerBook > 500)
                 PreferedPageCount = "Storos 500+";
